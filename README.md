@@ -63,10 +63,7 @@ tail -f output.log
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
-    <video width="320" height="240" controls>
-        <source src="https://www.yyandywt99.love/yy2/1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+>![Image](image/IMG_0763.GIF)
 >![Image](image/4.jpg)
 >![Image](image/5.jpg)
 
