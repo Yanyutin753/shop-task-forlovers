@@ -60,6 +60,8 @@ tail -f output.log
 -6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
+<iframe width="560" height="315" src="https://www.yyandywt99.love/yy2/1.mp4" frameborder="0" allowfullscreen></iframe>
+
 <video src="https://www.yyandywt99.love/yy2/1.mp4" controls autoplay loop></video>
 
 
