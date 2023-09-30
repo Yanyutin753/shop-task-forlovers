@@ -37,6 +37,12 @@ tail -f output.log
 数据库名字命名为：webserver
 用户名命名为：webserver
 用户名密码为= webserver123
+![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/ae048adb-cea9-4ec9-aede-4222af18424f)
+点击管理
+![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/82fc9390-104b-4d1a-b035-f8928bb7ac45)
+点击SQL复制文件里的内容
+
+
 
 
 
