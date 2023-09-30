@@ -39,7 +39,7 @@
 1. **打包后端项目：**
 -1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
 
--2.没有idea，直接启动我打包好的包。 [后端启动包]（）
+-2.没有idea，直接启动我打包好的包。 [后端启动包]（https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar）
 
 -3 **运行jar启动包** 
 ```
