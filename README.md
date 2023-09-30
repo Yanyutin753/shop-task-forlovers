@@ -26,23 +26,38 @@
 - **可靠使用：** 只有特定的用户才能进行特定用户的操作，保护了用户的使用安全
 
 ## 部署指南
-1.先用vscode打包webSever项目，拿到dist里的文件，复制到宝塔，新建站点完成前端的部署
-2.用idea打包sever项目，用maven打包项目，复制打包好的项目，用终端启动你的项目
+## 前端部署
 
+1. **打包前端项目：** 使用VSCode或其他编辑器打包前端WebServer项目，并确保您已经生成了前端的`dist`文件。
+
+2. **复制文件到宝塔：** 将`dist`文件夹内的所有文件复制到宝塔服务器的网站根目录。您可以使用FTP工具或SSH将文件上传到服务器。
+
+3. **新建站点：** 使用宝塔面板，在网站管理中新建一个站点。配置站点的域名、根目录等信息，确保站点的根目录指向您上传的`dist`文件夹。
+
+## 后端部署
+
+1. **打包后端项目：**
+1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
+
+2.没有idea，直接启动我打包好的包。 [后端启动包]（）
+
+3 **运行jar启动包** 
+```
 nohup java -jar 【 打包好的项目文件名（jar结尾）】 > output.log 2>&1 &
-
 tail -f output.log
-
-3.用宝塔新建mysql数据库，
+```
+4.用宝塔新建mysql数据库，
 数据库名字命名为：webserver
 用户名命名为：webserver
 用户名密码为= webserver123
+
+4.配置mysql数据库表
 ![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/ae048adb-cea9-4ec9-aede-4222af18424f)
 点击管理
 ![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/82fc9390-104b-4d1a-b035-f8928bb7ac45)
 点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
 
-
+5.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 
 
