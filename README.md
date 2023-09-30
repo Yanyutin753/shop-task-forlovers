@@ -37,16 +37,16 @@
 ## 后端部署
 
 1. **打包后端项目：**
--1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
+- 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
 
--2.没有idea，直接启动我打包好的包。 [后端启动包]（https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar）
+- 2.没有idea，直接启动我打包好的包。 [后端启动包]（https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar）
 
--3 **运行jar启动包** 
+- 3 **运行jar启动包** 
 ```
 nohup java -jar 【 打包好的项目文件名（jar结尾）】 > output.log 2>&1 &
 tail -f output.log
 ```
--4.用宝塔新建mysql数据库，
+- 4.用宝塔新建mysql数据库，
 数据库名字命名为：webserver
 用户名命名为：webserver
 用户名密码为= webserver123
