@@ -39,7 +39,7 @@
 1. **打包后端项目：**
 - 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
 
-- 2.没有idea，直接启动我打包好的包。 [后端启动包]（https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar）
+- 2.没有idea，直接启动我打包好的包。 [后端启动包](https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar)
 
 - 3 **运行jar启动包** 
 ```
@@ -52,21 +52,22 @@ tail -f output.log
 用户名密码为= webserver123
 
 -5.配置mysql数据库表
-![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/ae048adb-cea9-4ec9-aede-4222af18424f)
-点击管理
-![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/82fc9390-104b-4d1a-b035-f8928bb7ac45)
-点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
 
--6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
+点击管理
+>![Image](image/2.jpg)
+点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
+>![Image](image/3.jpg)
+>
+- 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
     <video width="320" height="240" controls>
         <source src="https://www.yyandywt99.love/yy2/1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
+>![Image](image/4.jpg)
+>![Image](image/5.jpg)
 
-![442b7ae7901465b7aecbbc16d39abf1](https://github.com/Yanyutin753/loveShopping/assets/132346501/5a64fc8f-6d98-4165-a644-746a3f6d2745)
-![87a10556af16c6fe88e57f93e09959a](https://github.com/Yanyutin753/loveShopping/assets/132346501/322230c2-ed26-47d2-9214-cd5b38ba7fb8)
 
 
 ## 贡献
