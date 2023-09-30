@@ -60,7 +60,19 @@ tail -f output.log
 -6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
-https://www.yyandywt99.love/yy2/1.mp4
+<!DOCTYPE html>
+<html>
+<head>
+    <title>播放视频</title>
+</head>
+<body>
+    <video width="320" height="240" controls>
+        <source src="https://www.yyandywt99.love/yy2/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>
+
 
 
 ![442b7ae7901465b7aecbbc16d39abf1](https://github.com/Yanyutin753/loveShopping/assets/132346501/5a64fc8f-6d98-4165-a644-746a3f6d2745)
