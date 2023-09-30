@@ -60,10 +60,10 @@ tail -f output.log
 -6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
-<iframe width="560" height="315" src="https://www.yyandywt99.love/yy2/1.mp4" frameborder="0" allowfullscreen></iframe>
-
-<video src="https://www.yyandywt99.love/yy2/1.mp4" controls autoplay loop></video>
-
+    <video width="320" height="240" controls>
+        <source src="https://www.yyandywt99.love/yy2/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 ![442b7ae7901465b7aecbbc16d39abf1](https://github.com/Yanyutin753/loveShopping/assets/132346501/5a64fc8f-6d98-4165-a644-746a3f6d2745)
 ![87a10556af16c6fe88e57f93e09959a](https://github.com/Yanyutin753/loveShopping/assets/132346501/322230c2-ed26-47d2-9214-cd5b38ba7fb8)
@@ -73,9 +73,10 @@ tail -f output.log
 
 如果您有兴趣为项目做出贡献或报告问题，请查看项目的GitHub仓库并提出您的建议和改进。
 
-## 许可证
+### 贡献与支持
+- 欢迎贡献代码，提出问题和建议。如果你发现了bug或者有新的功能想法，请提交一个Issue让我知道。你也可以通过Fork项目并提交Pull Request来贡献代码。 如果你想部署这个项目，给我一个星星⭐，这是对我最大的支持！
+- 敲代码不易，希望客官给点赞助，让我更好修改代码！
+![image](https://github.com/Yanyutin753/wechat_pictureChange/assets/132346501/713eb69e-6e00-46ad-bec5-0b3926305ef0)
 
-这个项目基于 [许可证名称] 许可证。请查看项目的许可证文件以获取更多信息。
 
 感谢您的兴趣和支持！
-
