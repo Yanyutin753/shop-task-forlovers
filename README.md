@@ -54,9 +54,11 @@ tail -f output.log
 -5.配置mysql数据库表
 
 点击管理
->![Image](image/2.jpg)
+>![Image](image/2.png)
+>
 点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
->![Image](image/3.jpg)
+
+>![Image](image/3.png)
 >
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
