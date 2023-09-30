@@ -40,7 +40,7 @@ tail -f output.log
 ![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/ae048adb-cea9-4ec9-aede-4222af18424f)
 点击管理
 ![image](https://github.com/Yanyutin753/loveShopping/assets/132346501/82fc9390-104b-4d1a-b035-f8928bb7ac45)
-点击SQL复制文件里的内容
+点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
 
 
 
