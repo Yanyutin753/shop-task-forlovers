@@ -56,7 +56,7 @@ tail -f output.log
 点击管理
 >![Image](image/2.png)
 >
-点击SQL复制[文件](https://github.com/Yanyutin753/loveShopping/blob/main/MySql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)里的内容
+点击SQL复制[文件](https://github.com/Yanyutin753/shop-task-forlovers/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BAsql.txt)里的内容
 
 >![Image](image/3.png)
 >
