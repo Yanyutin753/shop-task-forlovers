@@ -56,18 +56,18 @@ tail -f output.log
 -5.配置mysql数据库表
 
 点击管理
->![Image](image/2.png)
+![Image](image/2.png)
 >
 点击SQL复制[文件](https://github.com/Yanyutin753/shop-task-forlovers/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BAsql.txt)里的内容
 
->![Image](image/3.png)
+![Image](image/3.png)
 >
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
->![Image](image/IMG_0763.GIF)
->![Image](image/4.jpg)
->![Image](image/5.jpg)
+![Image](image/IMG_0763.GIF)
+![Image](image/4.jpg)
+![Image](image/5.jpg)
 
 
 
