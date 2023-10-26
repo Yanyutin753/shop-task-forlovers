@@ -116,7 +116,7 @@ export default {
 
     const fetchLoginToken = () => {
       axios
-        .post("http://121.37.243.173:8081/loginToken?token=" + token)
+        .post("http://localhost:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -140,7 +140,7 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         const response = await axios.get(
-          `http://121.37.243.173:8081/selectUser?id=${strippedId}`,
+          `http://localhost:8081/selectUser?id=${strippedId}`,
           { headers }
         );
         const data = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象

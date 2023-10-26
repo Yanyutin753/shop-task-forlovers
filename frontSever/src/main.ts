@@ -128,7 +128,7 @@ const displayLogo = ref('🏰捏捏的魔仙堡');
 app.provide('displayLogo', displayLogo);
 
 // 二维码链接
-const displayUrl = ref('http://121.37.243.173:8081/#/');
+const displayUrl = ref('http://localhost:8081/#/');
 
 app.provide('displayUrl', displayUrl);
 

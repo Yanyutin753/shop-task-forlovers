@@ -190,7 +190,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://121.37.243.173:8081/loginToken?token=" + token)
+        .post("http://localhost:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -216,7 +216,7 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         const response = await axios.get(
-          `http://121.37.243.173:8081/idSelectProduce?id=${strippedId}`,
+          `http://localhost:8081/idSelectProduce?id=${strippedId}`,
           { headers }
         );
         data.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
@@ -235,7 +235,7 @@ export default {
         const founderId = data.value.founderId;
 
         const res = await axios.get(
-          `http://121.37.243.173:8081/selectUser?id=${founderId}`,
+          `http://localhost:8081/selectUser?id=${founderId}`,
           { headers }
         );
         const resDate = res.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
@@ -254,7 +254,7 @@ export default {
     let data_tem = "";
     const buyItem = (data) => {
       axios
-        .get(`http://121.37.243.173:8081/selectCredit?name=${data.customer}`, {
+        .get(`http://localhost:8081/selectCredit?name=${data.customer}`, {
           headers,
         })
         .then((response) => {
@@ -275,7 +275,7 @@ export default {
     const buyProduce = (data_tem) => {
       axios
         .get(
-          `http://121.37.243.173:8081/selectCredit?name=${data_tem.customer}`,
+          `http://localhost:8081/selectCredit?name=${data_tem.customer}`,
           {
             headers,
           }
@@ -288,7 +288,7 @@ export default {
             // 发送 HTTP PUT 请求来完成购买操作
             axios
               .put(
-                `http://121.37.243.173:8081/buyProduce?id=${data_tem.produceId}`,
+                `http://localhost:8081/buyProduce?id=${data_tem.produceId}`,
                 null,
                 {
                   headers,

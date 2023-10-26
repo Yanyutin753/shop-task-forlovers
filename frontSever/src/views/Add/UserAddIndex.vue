@@ -127,7 +127,7 @@ export default {
       const formData = new FormData();
       formData.append("file", file.file);
 
-      fetch("http://121.37.243.173:8081/upload", {
+      fetch("http://localhost:8081/upload", {
         method: "POST",
         body: formData,
       })
@@ -167,7 +167,7 @@ export default {
 
       isLoading.value = true;
       // 发送 POST 请求到指定的 URL
-      fetch("http://121.37.243.173:8081/addUser", {
+      fetch("http://localhost:8081/addUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -250,7 +250,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://121.37.243.173:8081/loginToken?token=" + token)
+        .post("http://localhost:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -278,7 +278,7 @@ export default {
       // 在发起数据请求之前
       console.log("Before fetching data. userList:", userList.value);
       axios
-        .get("http://121.37.243.173:8081/user", { headers })
+        .get("http://localhost:8081/user", { headers })
         .then((response) => {
           // 请求成功，将获取的数据存储在 userList.value 数组中
           userList.value = response.data.data;
@@ -288,7 +288,7 @@ export default {
           console.error("Failed to fetch data:", error);
         });
       axios
-        .get("http://121.37.243.173:8081/findAllBroadcast", { headers })
+        .get("http://localhost:8081/findAllBroadcast", { headers })
         .then((response) => {
           // 请求成功，将获取的数据存储在 userList.value 数组中
           noticeMessages.value = response.data.data;

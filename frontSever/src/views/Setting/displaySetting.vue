@@ -148,7 +148,7 @@ export default {
     });
     const fetchLoginToken = () => {
       axios
-        .post("http://121.37.243.173:8081/loginToken?token=" + token)
+        .post("http://localhost:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -169,7 +169,7 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         axios
-          .get(`http://121.37.243.173:8081/selectUser?id=${userId.value}`, {
+          .get(`http://localhost:8081/selectUser?id=${userId.value}`, {
             headers,
           })
           .then((response) => {
@@ -244,7 +244,7 @@ export default {
         displayItem.value = userValue.value;
       }
       // 发送 POST 请求到指定的 URL
-      fetch("http://121.37.243.173:8081/requireUser", {
+      fetch("http://localhost:8081/requireUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
