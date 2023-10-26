@@ -1,7 +1,7 @@
 # loveShopping
 
 项目描述：这个项目是基于[Rainbow-Cats-Personal-WeChat-MiniProgram](https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram)的代码改造而来，转变为网页端应用。它具备多人同时登陆、自定义任务、自定义用户信息、登录、注册、自定义商品和购买商品等功能,
-如果是学生的话，可以申请Azure的免费服务器，项目将完全免费！如果你喜欢并感兴趣，请给我一个星星吧！感谢！
+如果是学生的话，可以申请Azure的免费服务器，项目将完全免费！敲代码不易，请给我一个星星吧！感谢！
 
 ## 功能特性
 
