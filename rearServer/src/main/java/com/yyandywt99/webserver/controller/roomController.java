@@ -1,9 +1,11 @@
 package com.yyandywt99.webserver.controller;
 
 import com.yyandywt99.webserver.anno.Log;
+import com.yyandywt99.webserver.mapper.produceMapper;
 import com.yyandywt99.webserver.pojo.Result;
 import com.yyandywt99.webserver.pojo.room;
 import com.yyandywt99.webserver.pojo.user;
+import com.yyandywt99.webserver.service.taskService;
 import com.yyandywt99.webserver.utils.JwtUtils;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -78,25 +81,8 @@ public class roomController {
         }
     }
 
-    @Log
-    @PostMapping("/addRoom")
-    public Result addNoRoom(@RequestBody room room){
-        try {
-            String s = roomService.addRoom(room);
-            Integer res = roomService.selectId();
-            log.info(s);
-            return Result.success(res);
-        } catch (Exception e) {
-            e.printStackTrace();
-            String errorMessage = e.getMessage(); // 获取异常消息字符串
-            log.info("添加失败");
-            return Result.error(errorMessage); // 将异常消息放入错误结果
-        }
-    }
     @Autowired
     private HttpServletRequest httpServletRequest;
-    @Autowired
-    private com.yyandywt99.webserver.service.userService userService;
     @Log
     @DeleteMapping ("/deleteRoom")
     public Result deleteRoom(@RequestParam("id") Integer id){
@@ -135,11 +121,24 @@ public class roomController {
                 //登陆人ID
                 operateUser = (Integer) claims.get("id");
             }
+            roomService.updateDetailReduceRoom(operateUser);
             room tem = roomService.idRoom(id);
+            tem.setRegisterTime(LocalDateTime.now());
             if(operateUser == tem.getFounderId()) {
-                String res = roomService.reduceRoom(id);
-                log.info("减少成功");
-                return Result.success(res);
+                if(tem.getProduceNum() - 1 <= 0){
+                    roomService.deleteRoom(id);
+                }
+                else{
+                    roomService.reduceRoom(id);
+                }
+                tem.setProduceNum(1);
+                tem.setCheckProduce(true);
+                log.info(String.valueOf(tem.isCheckLove()));
+                Integer s = roomService.addRoom(tem);
+                if(s != null){
+                    log.info("减少成功");
+                }
+                return Result.success(s);
             }
             else return Result.error("您不能兑换别人的专属商品哦！");
         } catch (Exception e) {
@@ -148,5 +147,11 @@ public class roomController {
             log.info("减少失败");
             return Result.error(errorMessage); // 将异常消息放入错误结果
         }
+    }
+    @GetMapping("updateLoveRoom")
+    public Result updateLoveTask(@RequestParam("id") Integer id){
+        String res = roomService.updateLoveRoom(id);
+        log.info("收藏成功");
+        return Result.success(res);
     }
 }

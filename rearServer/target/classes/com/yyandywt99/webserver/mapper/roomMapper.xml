@@ -11,46 +11,51 @@
                produceImage,
                produceNum,
                checkProduce,
+               checkLove,
                useName,
                updateTime,
                registerTime
         from roomtable
     </sql>
-    <insert id="addRoom">
+    <insert id="addRoom" keyProperty="produceId" useGeneratedKeys="true">
         INSERT IGNORE INTO roomtable (
-                                      <if test="produceId != null">
-                                        produceId,
-                                      </if>
                                       founderId,
                                       produceName,
                                       produceText,
                                       produceImage,
                                       produceNum,
                                       checkProduce,
+                                      checkLove,
                                       useName,
-                                      updateTime,
-                                      registerTime
-                                      )
+                                      registerTime,
+                                      updateTime
+        )
         VALUES (
-                <if test="produceId != null">#{produceId},</if>
                 #{founderId},
                 #{produceName},
                 #{produceText},
                 #{produceImage},
                 #{produceNum},
                 #{checkProduce},
+                #{checkLove},
                 #{useName},
-                now(),
+                #{registerTime},
                 now()
                )
-        ON DUPLICATE KEY UPDATE produceNum = roomtable.produceNum + 1,
-                                updateTime = now();
+        ON DUPLICATE KEY UPDATE
+        produceNum = roomtable.produceNum + 1,
+        updateTime = now();
 
     </insert>
     <update id="reduceRoom">
         update roomtable set produceNum = produceNum - 1 ,
                              updateTime = now()
         where produceId = #{id};
+    </update>
+    <update id="updateLoveRoom">
+        UPDATE roomtable
+        SET checkLove = !checkLove , updateTime = NOW()
+        WHERE produceId = #{id};
     </update>
     <delete id="deleteRoom">
         delete
@@ -76,7 +81,8 @@
     </select>
     <select id="selectId" resultType="java.lang.Integer">
         SELECT produceId FROM roomtable
-        ORDER BY updateTime DESC
+        ORDER BY registerTime DESC
         LIMIT 1;
     </select>
+
 </mapper>

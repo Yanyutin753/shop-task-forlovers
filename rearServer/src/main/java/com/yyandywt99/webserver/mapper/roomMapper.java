@@ -3,6 +3,7 @@ package com.yyandywt99.webserver.mapper;
 import com.yyandywt99.webserver.pojo.room;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ public interface roomMapper {
 
     public List<room> selectYesRoom(String name);
 
-    public void addRoom(room room);
+    public Integer addRoom(room room);
 
     public void deleteRoom(Integer id);
 
@@ -27,10 +28,16 @@ public interface roomMapper {
     public void reduceRoom(Integer id);
 
     @Select("select produceId, founderId, produceName, produceText, " +
-            "produceImage, produceNum, checkProduce, " +
+            "produceImage, produceNum, checkProduce, checkLove, " +
             "useName, updateTime, registerTime from roomtable " +
             "where produceId = #{id}")
     public room idRoom(Integer id);
 
 
+    public void updateLoveRoom(Integer id);
+
+    @Update("UPDATE detailusertable " +
+            "set allReduceRoom = allReduceRoom + 1 , dayReduceRoom = dayReduceRoom + 1 " +
+            "where userId = #{operateUser}")
+    public void updateDetailReduceRoom(Integer operateUser);
 }

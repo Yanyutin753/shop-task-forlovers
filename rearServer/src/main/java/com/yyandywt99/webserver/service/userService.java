@@ -4,6 +4,7 @@ import com.yyandywt99.webserver.pojo.user;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Yangyang
@@ -27,4 +28,16 @@ public interface userService {
     public String adduser(user user);
 
     public String deleteUser(Integer id);
+
+    public void insertRemind(Integer id);
+
+    public void closeRemind(Integer id);
+
+    public void changeRemind(Integer operateUser, String time);
+
+    public String RequireSignPassword(String password);
+
+    public String signPassword();
+
+    public String getWechatNoticeKey();
 }

@@ -24,5 +24,13 @@ public class user {
     private int credit;
     private LocalDateTime registerTime;
     private LocalDateTime updateTime;
+    private String remindTime;
+    private boolean remindSwitch;
+    private String remindText;
+    private String displayItem;
+    private String displayDay;
+    private String displayLogo;
+    private String displayUrl;
+    private String signPassword;
 
 }

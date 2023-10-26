@@ -23,6 +23,7 @@ public class room {
     private String produceImage;
     private Integer produceNum;
     private boolean checkProduce;
+    private boolean checkLove;
     private String useName;
     private LocalDateTime updateTime;
     private LocalDateTime registerTime;

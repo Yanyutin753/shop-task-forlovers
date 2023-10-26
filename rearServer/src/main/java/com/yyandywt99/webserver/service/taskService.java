@@ -12,11 +12,15 @@ import java.util.List;
 public interface taskService {
     public List<task> selectCheckTask(Integer id,String taskName);
 
-    public String addTask(task tem);
+    public Integer addTask(task tem);
 
     public String deleteTask(Integer id);
 
     public String completedTask(Integer id);
 
     public task selectTask(Integer id);
+
+    public String updateLoveTask(Integer id);
+
+    public void allAddTask(Integer operateUser);
 }

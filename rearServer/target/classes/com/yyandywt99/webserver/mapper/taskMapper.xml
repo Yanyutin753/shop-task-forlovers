@@ -6,11 +6,12 @@
 <mapper namespace="com.yyandywt99.webserver.mapper.taskMapper">
     <sql id="taskSelect">
         select taskId,useName,taskName,taskText,taskCredit,
-               checkTask,updateTime,registerTime from tasktable
+               checkTask,checkLove,updateTime,registerTime from tasktable
     </sql>
-    <insert id="addTask">
+
+    <insert id="addTask" keyProperty="taskId" useGeneratedKeys="true" >
         INSERT INTO tasktable (useName,founderId, taskName, taskText, taskCredit, updateTime, registerTime)
-        values (#{useName},#{founderId},#{taskName},#{taskText},#{taskCredit},#{updateTime},#{registerTime})
+        values (#{useName},#{founderId},#{taskName},#{taskText},#{taskCredit},now(),now())
     </insert>
     <update id="completedTask">
         UPDATE tasktable
@@ -24,10 +25,16 @@
             updateTime = now()
         WHERE name = (SELECT useName FROM tasktable WHERE taskId = #{id});
     </update>
+    <update id="updateDetailTask">
+        UPDATE detailusertable
+        set allCompleteTask = allCompleteTask + 1 , dayCompleteTask = dayCompleteTask + 1
+        where useName = (select useName from tasktable where taskId = #{id})
+    </update>
+
 
     <select id="selectTask" resultType="com.yyandywt99.webserver.pojo.task">
         select taskId,founderId,useName,taskName,taskText,taskCredit,
-               checkTask,t.updateTime,t.registerTime,u.userImage
+               checkTask,checkLove,t.updateTime,t.registerTime,u.userImage
         from tasktable t
                  JOIN usertable u on t.useName = u.name
         where taskId = #{id};
@@ -35,11 +42,16 @@
 
     <select id="selectCheckTask" resultType="com.yyandywt99.webserver.pojo.task">
         select taskId,founderId,useName,taskName,taskText,taskCredit,
-               checkTask,t.updateTime,t.registerTime,u.userImage
+               checkTask,checkLove,t.updateTime,t.registerTime,u.userImage
         from tasktable t
         JOIN usertable u on t.useName = u.name
         where checkTask = #{id} and taskName like CONCAT('%', #{taskName}, '%')
         ORDER BY t.updateTime DESC;
+    </select>
+    <select id="updateLoveTask">
+        UPDATE tasktable
+        SET checkLove = !checkLove , updateTime = NOW()
+        WHERE taskId = #{id};
     </select>
 
 </mapper>

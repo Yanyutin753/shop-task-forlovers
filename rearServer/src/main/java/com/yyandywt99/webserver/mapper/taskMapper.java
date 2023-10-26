@@ -18,7 +18,12 @@ public interface taskMapper {
 
     public List<task> selectCheckTask(Integer id,String taskName);
 
-    public void addTask(task tem);
+    public Integer addTask(task tem);
+
+    @Update("UPDATE detailusertable " +
+            "set allAddTask = allAddTask + 1 , dayAddTask = dayAddTask + 1 " +
+            "where userId = #{operateUser}")
+    public void allAddTask(Integer operateUser);
 
     @Delete("DELETE FROM tasktable where taskId = #{id}")
     public void deleteTask(Integer id);
@@ -26,4 +31,14 @@ public interface taskMapper {
     public void completedTask(Integer id);
 
     public void updateUserCredit(Integer id);
+
+    public void updateLoveTask(Integer id);
+
+    public void updateDetailTask(Integer id);
+
+    @Update("UPDATE detailusertable " +
+            "set allCredit = allCredit + (SELECT taskCredit FROM tasktable WHERE tasktable.taskId = #{id}), " +
+            "dayCredit = dayCredit + (SELECT taskCredit FROM tasktable WHERE tasktable.taskId = #{id}) " +
+            "where useName = (select useName from tasktable where taskId = #{id})")
+    public void updateDetailCredit(Integer id);
 }

@@ -20,7 +20,7 @@ import java.util.Arrays;
  */
 @Slf4j
 @Component
-@Aspect
+//@Aspect
 public class limitLogAspect {
     @Autowired
     private HttpServletRequest httpServletRequest;

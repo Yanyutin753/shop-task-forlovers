@@ -25,7 +25,7 @@ public class produce {
     private Integer produceNum;
     private boolean checkProduce;
     private String customer;
+    private boolean checkLove;
     private LocalDateTime updateTime;
     private LocalDateTime registerTime;
-
 }

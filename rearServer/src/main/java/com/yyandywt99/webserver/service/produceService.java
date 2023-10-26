@@ -18,7 +18,14 @@ public interface produceService {
 
     public String deleteProduce(Integer produceId);
 
-    public String addProduce(produce produce);
+    public Integer addProduce(produce produce);
 
     public produce idSelectProduce(Integer id);
+
+    public String updateLoveProduce(Integer id);
+
+
+    public void updateDetailBuyProduce(int nameId);
+
+    public void updateDetailAddProduce(Integer operateUser);
 }

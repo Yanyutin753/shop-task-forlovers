@@ -58,14 +58,15 @@ public class roomServiceImpl implements roomService {
     }
 
     @Override
-    public String addRoom(room room) {
+    public Integer addRoom(room room) {
         try {
             roomMapper.addRoom(room);
-            return "添加成功";
+            Integer res = room.getProduceId();
+            return res;
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "添加失败";
+        return null;
     }
 
     @Override
@@ -99,6 +100,26 @@ public class roomServiceImpl implements roomService {
             e.printStackTrace();
         }
         return "减少失败";
+    }
+
+    @Override
+    public String updateLoveRoom(Integer id) {
+        try {
+            roomMapper.updateLoveRoom(id);
+            return "收藏操作成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "收藏操作失败";
+    }
+
+    @Override
+    public void updateDetailReduceRoom(Integer operateUser) {
+        try {
+            roomMapper.updateDetailReduceRoom(operateUser);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package com.yyandywt99.webserver.service.impl;
 
 import com.yyandywt99.webserver.mapper.produceMapper;
+import com.yyandywt99.webserver.mapper.roomMapper;
 import com.yyandywt99.webserver.pojo.Result;
 import com.yyandywt99.webserver.pojo.produce;
 import com.yyandywt99.webserver.service.produceService;
@@ -54,13 +55,14 @@ public class produceServiceImpl implements produceService {
     }
 
     @Override
-    public String addProduce(produce produce) {
+    public Integer addProduce(produce produce) {
         try {
             produceMapper.addProduce(produce);
-            return "成功添加商品！";
+            Integer res = produce.getProduceId();
+            return res;
         } catch (Exception e) {
             e.printStackTrace();
-            return "添加商品失败";
+            return null;
         }
     }
 
@@ -72,6 +74,36 @@ public class produceServiceImpl implements produceService {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    @Override
+    public String updateLoveProduce(Integer id) {
+        try {
+            produceMapper.updateLoveProduce(id);
+            return "收藏操作成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "收藏操作失败";
+    }
+
+    @Override
+    public void updateDetailBuyProduce(int nameId) {
+        try {
+            produceMapper.updateDetailBuyProduce(nameId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void updateDetailAddProduce(Integer operateUser) {
+        try {
+            produceMapper.updateDetailAddProduce(operateUser);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

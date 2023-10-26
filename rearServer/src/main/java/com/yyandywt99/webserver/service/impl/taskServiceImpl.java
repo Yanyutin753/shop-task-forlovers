@@ -2,6 +2,7 @@ package com.yyandywt99.webserver.service.impl;
 
 import com.yyandywt99.webserver.mapper.taskMapper;
 import com.yyandywt99.webserver.mapper.userMapper;
+import com.yyandywt99.webserver.pojo.room;
 import com.yyandywt99.webserver.pojo.task;
 import com.yyandywt99.webserver.pojo.user;
 import com.yyandywt99.webserver.service.taskService;
@@ -27,13 +28,14 @@ public class taskServiceImpl implements taskService {
     }
 
     @Override
-    public String addTask(task task) {
+    public Integer addTask(task task) {
         try {
             taskMapper.addTask(task);
-            return "添加成功";
+            Integer res = task.getTaskId();
+            return res;
         } catch (Exception e) {
             e.printStackTrace();
-            return "添加失败";
+            return null;
         }
     }
 
@@ -53,6 +55,12 @@ public class taskServiceImpl implements taskService {
         try {
             taskMapper.completedTask(id);
             taskMapper.updateUserCredit(id);
+            taskMapper.updateDetailCredit(id);
+            try {
+                taskMapper.updateDetailTask(id);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return "成功完成任务，你真棒！";
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,6 +77,26 @@ public class taskServiceImpl implements taskService {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    @Override
+    public String updateLoveTask(Integer id) {
+        try {
+            taskMapper.updateLoveTask(id);
+            return "收藏成功";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public void allAddTask(Integer operateUser) {
+        try {
+            taskMapper.allAddTask(operateUser);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

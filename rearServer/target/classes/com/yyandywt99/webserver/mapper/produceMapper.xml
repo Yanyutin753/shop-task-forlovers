@@ -13,18 +13,19 @@
                produceCredit,
                produceNum,
                customer,
+               checkLove,
                updateTime,
                registerTime
         from producetable
     </sql>
-    <insert id="addProduce">
+    <insert id="addProduce" keyProperty="produceId" useGeneratedKeys="true" >
         INSERT INTO producetable (produceName, founderId,
                                   produceText, produceImage,
                                   produceCredit, produceNum,
                                   customer, updateTime, registerTime)
         values (#{produceName},#{founderId}, #{produceText}, #{produceImage},
                 #{produceCredit}, #{produceNum}, #{customer},
-                #{updateTime}, #{registerTime})
+                now(), now())
     </insert>
     <update id="updateNum">
         update producetable
@@ -39,6 +40,11 @@
             usertable.updateTime = now()
         where p.produceId = #{id}
 
+    </update>
+    <update id="updateLoveProduce">
+        UPDATE producetable
+        SET checkLove = !checkLove , updateTime = NOW()
+        WHERE produceId = #{id};
     </update>
 
     <delete id="deleteProduce">

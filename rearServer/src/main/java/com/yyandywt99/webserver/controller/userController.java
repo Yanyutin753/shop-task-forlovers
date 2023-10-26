@@ -22,7 +22,10 @@ import java.util.List;
 @RestController
 public class userController {
     @Autowired
+    private HttpServletRequest httpServletRequest;
+    @Autowired
     private com.yyandywt99.webserver.service.userService userService;
+
 
     @GetMapping("user")
     public Result selectUser() {
@@ -77,6 +80,18 @@ public class userController {
         return Result.success(url);
     }
 
+    @GetMapping("RequireSignPassword")
+    public Result RequireSignPassword(@RequestParam("password") String password){
+        String res = userService.RequireSignPassword(password);
+        return Result.success(res);
+    }
+
+    @GetMapping("signPassword")
+    public Result signPassword(){
+        String res = userService.signPassword();
+        return Result.success(res);
+    }
+
     @Log
     @PostMapping ("addUser")
     public Result addUser(@RequestBody user user) {
@@ -84,9 +99,6 @@ public class userController {
         log.info("添加成功");
         return Result.success(url);
     }
-
-    @Autowired
-    private HttpServletRequest httpServletRequest;
     @Log
     @PutMapping ("deleteUser")
     public Result deleteUser(@RequestParam("id") Integer id) {

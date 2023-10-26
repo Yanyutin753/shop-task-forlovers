@@ -85,3 +85,6 @@ create table tasktable
 )
     engine = InnoDB;
 
+INSERT INTO webserver.logincheck (attribute, value) VALUES ('loginCheck', '小羊是帅哥');
+INSERT INTO webserver.logincheck (attribute, value) VALUES ('wechatNoticeKey', 'ff0a6573-0b5e-432c-b22a-00dd399a1275');
+

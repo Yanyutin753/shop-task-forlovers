@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Yangyang
@@ -88,8 +89,12 @@ public class userServiceImpl implements userService {
     @Override
     public String adduser(user user) {
         try {
-            userMapper.addUser(user);
-            return "添加成功！";
+            if(user.getSignPassword().equals(userMapper.signPassword())){
+                userMapper.addUser(user);
+                userMapper.detailAddUser(user);
+                return "添加成功！";
+            }
+            else return "注册密钥错误";
         } catch (Exception e) {
             e.printStackTrace();
             return "添加失败";
@@ -104,6 +109,66 @@ public class userServiceImpl implements userService {
         } catch (Exception e) {
             e.printStackTrace();
             return "删除失败";
+        }
+    }
+
+    @Override
+    public void insertRemind(Integer id) {
+        try {
+            userMapper.insertRemind(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void closeRemind(Integer id) {
+        try {
+            userMapper.closeRemind(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void changeRemind(Integer operateUser, String time) {
+        try {
+            userMapper.changeRemind(operateUser,time);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String RequireSignPassword(String password) {
+        try {
+            userMapper.RequireSignPassword(password);
+            return "修改成功！";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "修改失败！";
+        }
+    }
+
+    @Override
+    public String signPassword() {
+        try {
+            String res = userMapper.signPassword();
+            return res;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public String getWechatNoticeKey() {
+        try {
+            String res = userMapper.getWechatNoticeKey();
+            return res;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

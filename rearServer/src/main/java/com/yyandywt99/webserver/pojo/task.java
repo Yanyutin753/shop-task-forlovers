@@ -27,4 +27,5 @@ public class task {
     private LocalDateTime registerTime;
     private LocalDateTime updateTime;
     private boolean checkTask;
+    private boolean checkLove;
 }

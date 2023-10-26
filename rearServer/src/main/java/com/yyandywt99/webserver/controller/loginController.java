@@ -27,6 +27,7 @@ public class loginController {
     @Autowired
     private com.yyandywt99.webserver.service.userService userService;
 
+
     @PostMapping("login")
     public Result login(@RequestBody user user) {
         user res = userService.login(user);

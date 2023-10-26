@@ -4,8 +4,10 @@ import com.yyandywt99.webserver.pojo.user;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
+import java.util.concurrent.ScheduledFuture;
 
 /**
  * @author Yangyang
@@ -17,7 +19,8 @@ public interface userMapper {
     public List<user> select();
 
     @Select("select nameId, name, userText, userImage, credit, " +
-            "updateTime, registerTime from usertable " +
+            "updateTime, registerTime, remindSwitch,remindTime," +
+            "remindText,displayItem,displayDay,displayLogo,displayUrl from usertable " +
             "where nameId = #{id}"
     )
     public user selectUser(Integer id);
@@ -34,9 +37,31 @@ public interface userMapper {
 
     public user login(user user);
 
-    public void addUser(user user);
+    public Integer addUser(user user);
+
+    public void detailAddUser(user user);
 
     @Delete("delete from usertable where nameId = #{id}")
     public void deleteUser(Integer id);
+
+    @Update("update usertable set remindSwitch = 1 " +
+            "where nameId = #{nameId}")
+    public void insertRemind(Integer nameId);
+
+    @Update("update usertable set remindSwitch = 0 " +
+            "where nameId = #{nameId}")
+    public void closeRemind(Integer nameId);
+
+    @Update("update usertable set  remindTime = #{time} where nameId = #{operateUser}")
+    public void changeRemind(Integer operateUser, String time);
+
+    @Update("update logincheck set value = #{password} where attribute = 'loginCheck' ")
+    public void RequireSignPassword(String password);
+
+    @Select("select value from logincheck where attribute = 'loginCheck' ")
+    public String signPassword();
+
+    @Select("select value from logincheck where attribute = 'wechatNoticeKey' ")
+    public String getWechatNoticeKey();
 }
 

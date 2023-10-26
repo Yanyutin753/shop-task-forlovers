@@ -44,10 +44,7 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.79" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.79" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.29" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.29" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.29" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.29" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.29" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.7.15" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
@@ -128,5 +125,28 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.7.15" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.29" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
+    <orderEntry type="library" name="Maven: com.dtflys.forest:forest-spring-boot-starter:1.5.14" level="project" />
+    <orderEntry type="library" name="Maven: com.dtflys.forest:forest-core:1.5.14" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.juniversalchardet:juniversalchardet:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient-cache:4.5.14" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.14" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:4.9.3" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.21" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.21" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:2.7" level="project" />
+    <orderEntry type="library" name="Maven: com.dtflys.forest:forest-spring:1.5.14" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.7.15" level="project" />
+    <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.14.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.29" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.29" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.29" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.3.29" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:javase:3.5.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.zxing:core:3.5.1" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.82" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.jai-imageio:jai-imageio-core:1.4.0" level="project" />
   </component>
 </module>

@@ -17,11 +17,15 @@ public interface roomService {
 
     public List<room> nameNoSelectRoom(String name);
 
-    public String addRoom(room room);
+    public Integer addRoom(room room);
 
     public String deleteRoom(Integer id);
 
     public Integer selectId();
 
     public String reduceRoom(Integer id);
+
+    public String updateLoveRoom(Integer id);
+
+    public void updateDetailReduceRoom(Integer operateUser);
 }

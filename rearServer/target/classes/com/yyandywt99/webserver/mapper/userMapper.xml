@@ -10,9 +10,14 @@
         WHERE usertable.nameid = #{id};
 
     </insert>
-    <insert id="addUser">
+
+    <insert id="addUser" keyProperty="nameId" useGeneratedKeys="true" >
         INSERT INTO usertable (name, password, userText, userImage, updateTime, registerTime)
         values (#{name},#{password},#{userText},#{userImage},now(),now());
+    </insert>
+    <insert id="detailAddUser">
+        INSERT INTO detailusertable (userId,useName)
+        values (#{nameId},#{name});
     </insert>
     <update id="requireUser">
         update usertable
@@ -28,6 +33,21 @@
             </if>
             <if test="password != null and password != ''">
                 password = #{password},
+            </if>
+            <if test="remindText != null and remindText != ''">
+                remindText = #{remindText},
+            </if>
+            <if test="displayItem != null and displayItem != ''">
+                displayItem = #{displayItem},
+            </if>
+            <if test="displayDay != null and displayDay != ''">
+                displayDay = #{displayDay},
+            </if>
+            <if test="displayLogo != null and displayLogo != ''">
+                displayLogo = #{displayLogo},
+            </if>
+            <if test="displayUrl != null and displayUrl != ''">
+                displayUrl = #{displayUrl},
             </if>
             updateTime = now()
         </set>
