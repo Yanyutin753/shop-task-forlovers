@@ -1,6 +1,6 @@
 # loveShopping
 
-项目描述：这个项目是基于[Rainbow-Cats-Personal-WeChat-MiniProgram](https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram)的代码改造而来，转变为网页端应用。它具备多人同时登陆、自定义任务、自定义用户信息、登录、注册、自定义商品和购买商品等功能,
+项目描述：这个项目是基于[Rainbow-Cats-Personal-WeChat-MiniProgram](https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram)的代码改造而来，转变为网页端应用。它具备多人同时登陆、自定义任务、自定义用户信息、登录、注册、自定义商品和购买商品，自定义提醒等功能,
 如果是学生的话，可以申请Azure的免费服务器，项目将完全免费！敲代码不易，请给我一个星星吧！感谢！
 
 ## 功能特性
@@ -29,6 +29,20 @@
 
 - **自定义用户配置：** 实现自定义注册，自定义提醒，自定义海报等！
 
+- **接入企业微信：** 同时可以接入企业微信ChatGpt机器人，可实现更多功能！
+
+- **可玩性高：** 可以扩展更多功能，未来计划扩展聊天室，交换照片，闪照，游戏互动等功能！
+
+
+缺点：
+- 部分手机可能会出现适配问题：毕竟学编程没多久，代码质量不是很行！
+
+- 还没实现电脑端和ipad端
+
+- 没有实现图片分级管理
+
+- 更多功能期待开发
+
 ## 部署指南
 ## 前端部署
 
@@ -45,15 +59,18 @@
 
 - 2.没有idea，直接启动我打包好的包。 [后端启动包](https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar)
 
-- 3 **运行jar启动包** 
-```
-nohup java -jar 【 打包好的项目文件名（jar结尾）】 > output.log 2>&1 &
-tail -f output.log
-```
-- 4.用宝塔新建mysql数据库，
+- 3.用宝塔新建mysql数据库，
 数据库名字命名为：webserver
 用户名命名为：webserver
-用户名密码为= fhjfjhfjhgjhg
+用户名密码为= 自己设置
+
+- 4 **运行jar启动包** 
+```
+nohup java -jar 【 打包好的项目文件名（jar结尾）】> output.log 2>&1 &
+或者
+nohup java -jar WebServer-0.0.1-SNAPSHOT.jar --spring.datasource.password=(你的数据库密码)> output.log 2>&1 &
+tail -f output.log
+```
 
 -5.配置mysql数据库表
 
@@ -93,6 +110,10 @@ tail -f output.log
 
 - 敲代码不易，希望客官给点赞助，让我更好修改代码！
   
+
+
+感谢您的兴趣和支持！
+
 
 
 感谢您的兴趣和支持！
