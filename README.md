@@ -1,7 +1,7 @@
 # loveShopping
 
 项目描述：这个项目是基于[Rainbow-Cats-Personal-WeChat-MiniProgram](https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram)的代码改造而来，转变为网页端应用。它具备多人同时登陆、自定义任务、自定义用户信息、登录、注册、自定义商品和购买商品等功能,
-如果是学生的话，可以申请Azure的免费服务器，项目将完全免费！如果你喜欢并感兴趣，请给我一个星星吧！感谢！
+如果是学生的话，可以申请Azure的免费服务器，项目将完全免费！敲代码不易，请给我一个星星吧！感谢！
 
 ## 功能特性
 
@@ -89,7 +89,7 @@ tail -f output.log
 ### 贡献与支持
 - 欢迎贡献代码，提出问题和建议。如果你发现了bug或者有新的功能想法，请提交一个Issue让我知道。你也可以通过Fork项目并提交Pull Request来贡献代码。 如果你想部署这个项目，给我一个星星⭐，这是对我最大的支持！
 - 可以加我进群，学习更多代码，该网站可以已实现和企业微信互联，实现提醒功能！
-- ![c48ea7da3823b573dc53ac94300985f](https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/7821ea5d-ffe0-4c7d-8f9f-14ecd3e2a8ab)
+![Image](image/my.jpg)
 
 - 敲代码不易，希望客官给点赞助，让我更好修改代码！
   
