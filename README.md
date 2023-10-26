@@ -25,7 +25,9 @@
 
 - **可靠使用：** 只有特定的用户才能进行特定用户的操作，保护了用户的使用安全
 
-- **提醒功能：** 可以提醒新建任务，和实现通知功能！
+- **提醒功能：** 接入企业微信实现可以提醒新建任务，和实现通知功能！
+
+- **自定义用户配置：** 实现自定义注册，自定义提醒，自定义海报等！
 
 ## 部署指南
 ## 前端部署
@@ -51,7 +53,7 @@ tail -f output.log
 - 4.用宝塔新建mysql数据库，
 数据库名字命名为：webserver
 用户名命名为：webserver
-用户名密码为= webserver123
+用户名密码为= fhjfjhfjhgjhg
 
 -5.配置mysql数据库表
 
@@ -65,9 +67,18 @@ tail -f output.log
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
-![Image](image/IMG_0763.GIF)
-![Image](image/4.jpg)
-![Image](image/5.jpg)
+
+## 主页
+![Image](image/home.jpg)
+
+## 展示页
+![Image](image/display.jpg)
+
+## 微信通知
+![Image](image/notice.jpg)
+
+## 功能页
+![Image](image/function.jpg)
 
 
 
