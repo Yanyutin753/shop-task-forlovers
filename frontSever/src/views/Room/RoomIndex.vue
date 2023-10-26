@@ -381,7 +381,7 @@ export default {
 
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("http://121.37.243.173:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -408,7 +408,7 @@ export default {
       console.log("Before fetching data. productList_0:", productList_0.value);
 
       axios
-        .get(`http://localhost:8081/nameNoSelectRoom?name=${val}`, {
+        .get(`http://121.37.243.173:8081/nameNoSelectRoom?name=${val}`, {
           headers,
         })
         .then((response) => {
@@ -432,7 +432,7 @@ export default {
       console.log("Before fetching data. productList_1:", productList_1.value);
 
       axios
-        .get(`http://localhost:8081/nameYesSelectRoom?name=${val}`, {
+        .get(`http://121.37.243.173:8081/nameYesSelectRoom?name=${val}`, {
           headers,
         })
         .then((response) => {
@@ -480,7 +480,7 @@ export default {
           productList_1.value.splice(position, 1); // 从数组中移除任务项
         }
         axios
-          .delete(`http://localhost:8081/deleteRoom?id=${produceId}`, {
+          .delete(`http://121.37.243.173:8081/deleteRoom?id=${produceId}`, {
             headers,
           })
           .then((response) => {
@@ -532,7 +532,7 @@ export default {
         useName: item.useName,
       };
       console.log(produce);
-      fetch(`http://localhost:8081/reduceRoom?id=${produceId}`, {
+      fetch(`http://121.37.243.173:8081/reduceRoom?id=${produceId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -580,7 +580,7 @@ export default {
     };
     const loveItem = (item) => {
       axios
-        .get(`http://localhost:8081/updateLoveRoom?id=${item.produceId}`, {
+        .get(`http://121.37.243.173:8081/updateLoveRoom?id=${item.produceId}`, {
           headers,
         })
         .then((response) => {
@@ -595,7 +595,7 @@ export default {
     };
     const remindItem = (item) => {
       axios
-        .get(`http://localhost:8081/remindRoom?id=${item.produceId}`, {
+        .get(`http://121.37.243.173:8081/remindRoom?id=${item.produceId}`, {
           headers,
         })
         .then((response) => {

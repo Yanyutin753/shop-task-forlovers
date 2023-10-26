@@ -132,7 +132,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("http://121.37.243.173:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -164,7 +164,7 @@ export default {
     };
     const onLogout = () => {
       axios
-        .put(`http://localhost:8081/deleteUser?id=${userId}`, "", {
+        .put(`http://121.37.243.173:8081/deleteUser?id=${userId}`, "", {
           headers,
         })
         .then((response) => {
@@ -208,7 +208,7 @@ export default {
       const formData = new FormData();
       formData.append("file", file.file);
 
-      fetch("http://localhost:8081/upload", {
+      fetch("http://121.37.243.173:8081/upload", {
         method: "POST",
         headers: headers, // 添加请求头
         body: formData,
@@ -238,7 +238,7 @@ export default {
 
       isLoading.value = true;
       // 发送 POST 请求到指定的 URL
-      fetch("http://localhost:8081/requireUser", {
+      fetch("http://121.37.243.173:8081/requireUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

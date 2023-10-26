@@ -182,7 +182,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("http://121.37.243.173:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -208,7 +208,7 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/selectTask?id=${strippedId}`,
+          `http://121.37.243.173:8081/selectTask?id=${strippedId}`,
           { headers }
         );
         data.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
@@ -229,7 +229,7 @@ export default {
         updateTime.value = data.value.updateTime;
         const founderId = data.value.founderId;
         const res = await axios.get(
-          `http://localhost:8081/selectUser?id=${founderId}`,
+          `http://121.37.243.173:8081/selectUser?id=${founderId}`,
           { headers }
         );
         const resDate = res.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
@@ -264,7 +264,7 @@ export default {
     const completeTask = (item) => {
       // 发送 HTTP DELETE 请求来完成数据
       axios
-        .put(`http://localhost:8081/tasks?id=${item}`, null, {
+        .put(`http://121.37.243.173:8081/tasks?id=${item}`, null, {
           headers,
         })
         .then((response) => {

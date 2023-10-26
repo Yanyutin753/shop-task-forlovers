@@ -424,7 +424,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("http://121.37.243.173:8081/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -453,7 +453,7 @@ export default {
 
       axios
         .get(
-          `http://localhost:8081/selectCheckTask?id=0&taskName=${val}`,
+          `http://121.37.243.173:8081/selectCheckTask?id=0&taskName=${val}`,
           {
             headers,
           }
@@ -480,7 +480,7 @@ export default {
 
       axios
         .get(
-          `http://localhost:8081/selectCheckTask?id=1&taskName=${val}`,
+          `http://121.37.243.173:8081/selectCheckTask?id=1&taskName=${val}`,
           {
             headers,
           }
@@ -523,7 +523,7 @@ export default {
     const deleteTask = (taskId, position, checkTask) => {
       // 发送 HTTP DELETE 请求来删除数据
       axios
-        .delete(`http://localhost:8081/tasks?id=${taskId}`, { headers })
+        .delete(`http://121.37.243.173:8081/tasks?id=${taskId}`, { headers })
         .then((response) => {
           if (checkTask == 0) {
             productList_0.value.splice(position, 1); // 从数组中移除任务项
@@ -564,7 +564,7 @@ export default {
     const completeTask = (taskId, index) => {
       // 发送 HTTP DELETE 请求来完成数据
       axios
-        .put(`http://localhost:8081/tasks?id=${taskId}`, null, { headers })
+        .put(`http://121.37.243.173:8081/tasks?id=${taskId}`, null, { headers })
         .then((response) => {
           // 处理完成成功的逻辑
           console.log("数据完成成功", response);
@@ -607,7 +607,7 @@ export default {
     };
     const loveItem = (item) => {
       axios
-        .get(`http://localhost:8081/updateLoveTask?id=${item.taskId}`, {
+        .get(`http://121.37.243.173:8081/updateLoveTask?id=${item.taskId}`, {
           headers,
         })
         .then((response) => {
@@ -639,7 +639,7 @@ export default {
 
     const remindItem = (item) => {
       axios
-        .get(`http://localhost:8081/remindTask?id=${item.taskId}`, {
+        .get(`http://121.37.243.173:8081/remindTask?id=${item.taskId}`, {
           headers,
         })
         .then((response) => {
