@@ -1,3 +1,5 @@
+## 安装jdk11 和 mysql 5.7以上
+
 ## 将simpleDeploy里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
 
 ![image](https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/74ca8130-491e-4ed2-b6e5-eacd635dfb0d)
