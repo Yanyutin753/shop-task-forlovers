@@ -232,7 +232,7 @@ export default {
     };
     const copyToClipboard = () => {
       const generateShareLink = () => {
-        return `/api/#/`;
+        return `https://github.com/Yanyutin753/shop-task-forlovers`;
       };
       const shareLink = generateShareLink();
       const tempInput = document.createElement("input");
@@ -242,10 +242,6 @@ export default {
       document.execCommand("copy");
       document.body.removeChild(tempInput);
       show.value = true;
-    };
-    const toReplace = () => {
-      window.location.href =
-        "https://mp.weixin.qq.com/s/CEKa34igZ38DBT3n8Yowtg";
     };
     const requireItem = () => {
       router.replace("/Setting");
@@ -266,7 +262,6 @@ export default {
     };
     return {
       calculateIconSize,
-      toReplace,
       icon,
       show,
       show_1,
