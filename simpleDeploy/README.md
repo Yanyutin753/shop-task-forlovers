@@ -1,4 +1,4 @@
-## 安装jdk11 和 mysql 5.7以上
+## 安装jdk11（推荐） 和 mysql 5.7以上
 
 ## 将simpleDeploy里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
 
