@@ -1,4 +1,4 @@
-create homebroadcast IF NOT EXISTS homebroadcast
+create table IF NOT EXISTS homebroadcast
 (
     broadCastId   int auto_increment comment '广播Id'
         primary key,
@@ -7,7 +7,7 @@ create homebroadcast IF NOT EXISTS homebroadcast
         unique (broadCastId)
 );
 
-create logincheck IF NOT EXISTS logincheck
+create table IF NOT EXISTS logincheck
 (
     attribute varchar(30) not null comment '属性名'
         primary key,
@@ -16,7 +16,7 @@ create logincheck IF NOT EXISTS logincheck
         unique (attribute)
 );
 
-create operate_log IF NOT EXISTS operate_log
+create table IF NOT EXISTS operate_log
 (
     id            int unsigned auto_increment comment 'ID'
         primary key,
@@ -30,7 +30,7 @@ create operate_log IF NOT EXISTS operate_log
 )
     comment '操作日志表';
 
-create usertable IF NOT EXISTS usertable
+create table IF NOT EXISTS usertable
 (
     nameId       int auto_increment comment 'name 的 id'
         primary key,
@@ -54,7 +54,7 @@ create usertable IF NOT EXISTS usertable
         unique (name)
 );
 
-create detailusertable IF NOT EXISTS detailusertable
+create table IF NOT EXISTS detailusertable
 (
     userId          int auto_increment comment '用户ID'
         primary key,
@@ -80,7 +80,7 @@ create detailusertable IF NOT EXISTS detailusertable
             on update cascade on delete cascade
 );
 
-create producetable IF NOT EXISTS producetable
+create table IF NOT EXISTS producetable
 (
     produceId     int auto_increment comment '商品ID',
     produceName   varchar(50)          not null comment '商品名字',
@@ -100,7 +100,7 @@ create producetable IF NOT EXISTS producetable
             on update cascade on delete cascade
 );
 
-create roomtable IF NOT EXISTS roomtable
+create table IF NOT EXISTS roomtable
 (
     produceId    int auto_increment comment '商品代号',
     founderId    int                  not null comment '商品拥有者',
@@ -123,7 +123,7 @@ create roomtable IF NOT EXISTS roomtable
             on update cascade on delete cascade
 );
 
-create tasktable IF NOT EXISTS tasktable
+create table IF NOT EXISTS tasktable
 (
     taskId       int auto_increment comment '任务编号'
         primary key,
@@ -141,7 +141,7 @@ create tasktable IF NOT EXISTS tasktable
             on update cascade on delete cascade
 );
 
-create temtasktable IF NOT EXISTS temtasktable
+create table IF NOT EXISTS temtasktable
 (
     taskId       int auto_increment comment '任务编号'
         primary key,
