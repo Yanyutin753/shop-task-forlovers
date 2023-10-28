@@ -171,5 +171,6 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.7.15" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.3.29" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.29" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.26" level="project" />
   </component>
 </module>
