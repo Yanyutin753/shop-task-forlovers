@@ -80,7 +80,7 @@ CREATE TABLE `logincheck` (
 
 INSERT INTO `logincheck` (`attribute`, `value`) VALUES
 ('loginCheck', '小羊是帅哥'),
-('wechatNoticeKey', '05e8b9bb-6be7-4d8b-bbce-54846851b450');
+('wechatNoticeKey', '***********************');
 
 -- --------------------------------------------------------
 

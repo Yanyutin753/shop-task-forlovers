@@ -30,6 +30,8 @@ create database webserver character set utf8mb4;
 use webserver;
 source /webserver.sql;
 
+docker pull phpmyadmin
+docker run --name test-phpmyadmin -p 8001:80 --link mysql:db -d phpmyadmin/phpmyadmin:latest
 exit
 exit
 

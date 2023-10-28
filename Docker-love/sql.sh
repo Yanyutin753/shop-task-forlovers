@@ -1,6 +1,7 @@
 echo "赋予权限"
 ch="grant all privileges on *.* to 'root'@'%'"
 mysql -uroot -plichun123456 --default-character-set=utf8mb4 -e"$ch"
+echo "成功"
 # 6.修改root帐号的权限，使得任何ip都能访问
 # grant all privileges on *.* to 'root'@'%';
 #  drop database webserver
