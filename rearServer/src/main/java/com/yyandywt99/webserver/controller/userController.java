@@ -20,6 +20,7 @@ import java.util.List;
 //输出日志文件
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class userController {
     @Autowired
     private HttpServletRequest httpServletRequest;

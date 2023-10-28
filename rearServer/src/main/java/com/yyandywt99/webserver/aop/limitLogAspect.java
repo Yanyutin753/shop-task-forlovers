@@ -22,6 +22,7 @@ import java.util.Arrays;
 @Component
 //@Aspect
 public class limitLogAspect {
+    //拿到网址
     @Autowired
     private HttpServletRequest httpServletRequest;
 

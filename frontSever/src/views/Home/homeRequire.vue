@@ -203,7 +203,7 @@ export default {
     });
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("/api/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -226,7 +226,7 @@ export default {
     };
     const fetchDataAndFillForm = () => {
       axios
-        .get("http://localhost:8081/findAllBroadcast", { headers })
+        .get("/api/findAllBroadcast", { headers })
         .then((response) => {
           // 请求成功，将获取的数据存储在 userList.value 数组中
           noticeMessages.value = response.data.data;
@@ -243,7 +243,7 @@ export default {
       const broadCast = {
         broadCastText: value.value,
       };
-      fetch("http://localhost:8081/addBroadcast", {
+      fetch("/api/addBroadcast", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -292,7 +292,7 @@ export default {
         broadCastText: reValue.value,
       };
       console.log(item_tem.broadCastId);
-      fetch("http://localhost:8081/requireBroadcast", {
+      fetch("/api/requireBroadcast", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -328,7 +328,7 @@ export default {
 
     const deleteItem = (broadCastId, position) => {
       axios
-        .get(`http://localhost:8081/deleteBroadcast?id=${broadCastId}`, {
+        .get(`/api/deleteBroadcast?id=${broadCastId}`, {
           headers,
         })
         .then((response) => {

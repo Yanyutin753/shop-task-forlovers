@@ -8,10 +8,7 @@ import com.yyandywt99.webserver.utils.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,13 +19,14 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
+@RequestMapping("/api")
 
 public class loginController {
     @Autowired
     private com.yyandywt99.webserver.service.userService userService;
 
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public Result login(@RequestBody user user) {
         user res = userService.login(user);
         if(res != null){
@@ -42,7 +40,7 @@ public class loginController {
         return Result.error("登陆失败");
     }
 
-    @PostMapping("loginToken")
+    @PostMapping("/loginToken")
     public Result loginToken(@RequestParam("token") String token){
         log.info(token);
         if(!StringUtils.hasLength(token)){

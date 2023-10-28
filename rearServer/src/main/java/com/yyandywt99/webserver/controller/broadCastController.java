@@ -12,17 +12,18 @@ import java.util.List;
  * @author Yangyang
  * @create 2023-10-22 21:21
  */
-@RestController
+@RestController()
+@RequestMapping("/api")
 public class broadCastController {
     @Autowired
     private broadCastService broadCastService;
-    @GetMapping("findAllBroadcast")
+    @GetMapping("/findAllBroadcast")
     public Result findAllBroadcast(){
         List<broadCast> res = broadCastService.findAllBroadcast();
         return Result.success(res);
     }
 
-    @PostMapping("addBroadcast")
+    @PostMapping("/addBroadcast")
     public Result addBroadcast(@RequestBody broadCast broadCast){
         try {
             Integer res = broadCastService.addBroadcast(broadCast);

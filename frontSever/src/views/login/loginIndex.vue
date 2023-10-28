@@ -26,7 +26,7 @@
           overflow: hidden;
         "
       >
-        <h4 style="line-height: 0; font-size: 10vw">Login on YUBB</h4>
+        <h4 style="line-height: 0; font-size: 10vw">Login on KABI</h4>
       </div>
 
       <div
@@ -103,7 +103,7 @@
               "
             >
               <van-button size="large" round block color="#F19290" native-type="submit">
-                <h7>LOGIN IN MOXIANBAO</h7>
+                <h7>LOGIN IN KABI'S HOUSE</h7>
               </van-button>
             </div>
             <div style="justify-content: center; transform: translateY(-2vw)">
@@ -205,7 +205,7 @@ export default {
         name: username.value,
         password: password.value,
       };
-      fetch("http://localhost:8081/login", {
+      fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

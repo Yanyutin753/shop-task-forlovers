@@ -126,7 +126,7 @@ export default {
 
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("/api/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -154,7 +154,7 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/idRoom?id=${strippedId}`,
+          `/api/idRoom?id=${strippedId}`,
           { headers }
         );
         resData.value = response.data.data;

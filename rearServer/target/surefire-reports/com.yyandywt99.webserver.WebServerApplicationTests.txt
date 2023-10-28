@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.yyandywt99.webserver.WebServerApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.836 s - in com.yyandywt99.webserver.WebServerApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.062 s - in com.yyandywt99.webserver.WebServerApplicationTests

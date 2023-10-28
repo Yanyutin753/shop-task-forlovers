@@ -297,7 +297,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("/api/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -324,7 +324,7 @@ export default {
       console.log("Before fetching data. produceList:", produceList.value);
 
       axios
-        .get(`http://localhost:8081/nameSelectProduce?name=${val}`, {
+        .get(`/api/nameSelectProduce?name=${val}`, {
           headers,
         })
         .then((response) => {
@@ -363,7 +363,7 @@ export default {
     };
     const deleteProduce = (ProduceId, position) => {
       axios
-        .delete(`http://localhost:8081/deleteProduce?id=${ProduceId}`, {
+        .delete(`/api/deleteProduce?id=${ProduceId}`, {
           headers,
         })
         .then((response) => {
@@ -388,7 +388,7 @@ export default {
 
     const buyItem = (index, position, item) => {
       axios
-        .get(`http://localhost:8081/selectCredit?name=${item.customer}`, {
+        .get(`/api/selectCredit?name=${item.customer}`, {
           headers,
         })
         .then((response) => {
@@ -410,7 +410,7 @@ export default {
     };
     const buyProduce = (ProduceId, position, item) => {
       axios
-        .get(`http://localhost:8081/selectCredit?name=${item.customer}`, {
+        .get(`/api/selectCredit?name=${item.customer}`, {
           headers,
         })
         .then((response) => {
@@ -421,7 +421,7 @@ export default {
             // 发送 HTTP PUT 请求来完成购买操作
             axios
               .put(
-                `http://localhost:8081/buyProduce?id=${ProduceId}`,
+                `/api/buyProduce?id=${ProduceId}`,
                 null,
                 {
                   headers,
@@ -471,7 +471,7 @@ export default {
     const loveItem = (item) => {
       axios
         .get(
-          `http://localhost:8081/updateLoveProduce?id=${item.produceId}`,
+          `/api/updateLoveProduce?id=${item.produceId}`,
           {
             headers,
           }

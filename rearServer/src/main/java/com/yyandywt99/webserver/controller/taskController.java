@@ -27,6 +27,7 @@ import java.util.Map;
 //输出日志文件
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class taskController {
     @Autowired
     private com.yyandywt99.webserver.service.taskService taskService;
@@ -68,7 +69,11 @@ public class taskController {
                 Map<String, Object> contentMap = new HashMap<>();
                 List<Map<String, Object>> list = new ArrayList<>();
                 Map<String, Object> obj = new HashMap<>();
-                String url = "http://121.37.243.173/#/TaskDisplay/" + result;
+                String baseUrl = httpServletRequest.getRequestURL().toString();
+                String requestUri = httpServletRequest.getRequestURI();
+                String baseUrlWithoutPath = baseUrl.replace(requestUri, "");
+                log.info(baseUrlWithoutPath);
+                String url = baseUrlWithoutPath+"/#/TaskDisplay/" + result;
                 obj.put("title", "🥰"+ task.getUseName() +"有新的任务:"+task.getTaskName()+",快去看看完成吧！");
                 obj.put("description","🌈"+ task.getTaskText()+"快去完成任务吧，记得一定要完成今日任务啊，加油，奥利给！");
                 obj.put("url",url);
@@ -140,7 +145,11 @@ public class taskController {
             List<Map<String, Object>> list = new ArrayList<>();
             Map<String, Object> obj = new HashMap<>();
             String picUrl = userService.selectImage(task.getUseName());
-            String url = "http://121.37.243.173/#/wechatTaskDisplay/" + id;
+            String baseUrl = httpServletRequest.getRequestURL().toString();
+            String requestUri = httpServletRequest.getRequestURI();
+            String baseUrlWithoutPath = baseUrl.replace(requestUri, "");
+            log.info(baseUrlWithoutPath);
+            String url = baseUrlWithoutPath+"/#/wechatTaskDisplay/" + id;
             obj.put("title", "🥰恭喜"+ task.getUseName() +"宝宝完成"+task.getTaskName()+"任务,继续加油哇");
             obj.put("description","🌈"+ task.getTaskText()+"快去完成其他任务吧，记得一定要完成今日任务啊，加油，奥利给！");
             obj.put("url",url);

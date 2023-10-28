@@ -366,8 +366,8 @@ export default {
     const userId = ref("");
     const router = useRouter();
     const x = window.innerWidth;
-    const y= window.innerHeight;
-    const xy = x/y;
+    const y = window.innerHeight;
+    const xy = x / y;
 
     const images = [jpg1, jpg2, jpg3, jpg4];
     const token = localStorage.getItem("jwtToken"); // 从localStorage获取JWT令牌
@@ -380,7 +380,7 @@ export default {
     };
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("/api/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -403,17 +403,25 @@ export default {
     const fetchDataAndFillForm = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8081/selectUserAllRecord?id=${userId.value}`,
+          `/api/selectUserAllRecord?id=${userId.value}`,
           { headers }
         );
         data.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
         axios
-          .get(`http://localhost:8081/selectUser?id=${userId.value}`, {
+          .get(`/api/selectUser?id=${userId.value}`, {
             headers,
           })
           .then((response) => {
             userData.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
             console.log(userData.value);
+            axios
+              .get(`/api/generateQRCode?text=${userData.value.displayUrl}`, {
+                headers,
+              })
+              .then((response) => {
+                console.log(userData.value.displayUrl);
+                imageUrl.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
+              });
             const timeDiff = new Date(userData.value.displayDay) - new Date();
             day.value = -Math.floor(timeDiff / (1000 * 60 * 60 * 24));
             const timeDay = new Date();
@@ -424,20 +432,9 @@ export default {
               "-" +
               timeDay.getDate();
           });
-        axios
-          .get(
-            `http://localhost:8081/generateQRCode?text=${userData.value.displayUrl}`,
-            {
-              headers,
-            }
-          )
-          .then((response) => {
-            imageUrl.value = response.data.data; // 假设服务器返回的数据是一个包含上述字段的对象
-          });
       } catch (error) {
         console.error("获取数据失败", error);
       }
-
       show_1.value = false;
     };
     // 在组件加载完成后自动触发数据加载和填充
@@ -466,8 +463,8 @@ export default {
   background-size: cover; /* 根据需要调整背景图片的尺寸 */
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   zoom: 1;
   /* 禁止页面内容缩放 */
   /* 设置容器高度，使其占满整个视口 */

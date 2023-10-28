@@ -143,7 +143,7 @@ export default {
         name: username.value,
         password: password.value,
       };
-      fetch("http://localhost:8081/login", {
+      fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

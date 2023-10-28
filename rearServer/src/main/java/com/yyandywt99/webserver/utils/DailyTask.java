@@ -18,10 +18,7 @@ import org.springframework.scheduling.TaskScheduler;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
@@ -35,6 +32,7 @@ import java.util.concurrent.ScheduledFuture;
 @RestController
 @Slf4j
 @Component
+@RequestMapping("/api")
 public class DailyTask {
     @Autowired
     private userService userService;

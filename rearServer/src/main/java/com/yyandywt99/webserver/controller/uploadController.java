@@ -21,6 +21,7 @@ import java.util.UUID;
  */
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class uploadController {
 
     @Autowired

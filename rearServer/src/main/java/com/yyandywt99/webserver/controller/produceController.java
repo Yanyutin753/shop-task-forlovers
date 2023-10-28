@@ -26,6 +26,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
+@RequestMapping("/api")
 public class produceController {
 
     @Autowired
@@ -121,8 +122,12 @@ public class produceController {
                 sendMap.put("msgtype", "news");
                 Map<String, Object> contentMap = new HashMap<>();
                 List<Map<String, Object>> list = new ArrayList<>();
+                String baseUrl = httpServletRequest.getRequestURL().toString();
+                String requestUri = httpServletRequest.getRequestURI();
+                String baseUrlWithoutPath = baseUrl.replace(requestUri, "");
+                log.info(baseUrlWithoutPath);
                 Map<String, Object> obj = new HashMap<>();
-                String url = "http://121.37.243.173/#/RoomDisplay/" + room.getProduceId();
+                String url = baseUrlWithoutPath+"/#/RoomDisplay/" + room.getProduceId();
                 obj.put("title", "🥰您的宝宝" + user.getName() + "提醒您兑换" + room.getProduceName() + "商品"+",快去看看吧！");
                 obj.put("description", "🌈快给你的宝宝兑换礼物吧，同时也要记得努力完成今日任务，加油，奥利给！");
                 obj.put("url", url);
@@ -190,7 +195,11 @@ public class produceController {
             Map<String, Object> contentMap = new HashMap<>();
             List<Map<String, Object>> list = new ArrayList<>();
             Map<String, Object> obj = new HashMap<>();
-            String url = "http://121.37.243.173/#/wechatProduceDisplay/"+res;
+            String baseUrl = httpServletRequest.getRequestURL().toString();
+            String requestUri = httpServletRequest.getRequestURI();
+            String baseUrlWithoutPath = baseUrl.replace(requestUri, "");
+            log.info(baseUrlWithoutPath);
+            String url = baseUrlWithoutPath+"/#/wechatProduceDisplay/"+res;
             obj.put("title", "🧸"+produce.getCustomer()+"有新的商品:"+produce.getProduceName()+",快去看看购买吧！");
             obj.put("description", "🎁"+produce.getProduceText()+"快去完成任务吧，攒积分购买吧！");
             obj.put("url",url);

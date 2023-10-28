@@ -178,7 +178,7 @@ export default {
     let userId = "";
     const fetchLoginToken = () => {
       axios
-        .post("http://localhost:8081/loginToken?token=" + token)
+        .post("/api/loginToken?token=" + token)
         .then((response) => {
           if (response.data.code == 0) {
             console.error(response.data.data);
@@ -199,7 +199,7 @@ export default {
 
     const fetchUserData = async () => {
       try {
-        const response = await axios.get("http://localhost:8081/user", {
+        const response = await axios.get("/api/user", {
           headers,
         }); // 替换为实际的API端点
         const userData = response.data.data; // 假设API返回一个包含用户数据的数组
@@ -290,7 +290,7 @@ export default {
       const formData = new FormData();
       formData.append("file", file.file);
 
-      fetch("http://localhost:8081/upload", {
+      fetch("/api/upload", {
         method: "POST",
         headers: headers, // 添加请求头
         body: formData,
@@ -346,7 +346,7 @@ export default {
       };
 
       // 发送 POST 请求到指定的 URL
-      fetch("http://localhost:8081/addProduce", {
+      fetch("/api/addProduce", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
