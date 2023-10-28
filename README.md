@@ -44,7 +44,14 @@
 - 更多功能期待开发
 
 ## 部署指南
-## 前端部署
+
+## [宝塔超级简单部署](https://github.com/Yanyutin753/shop-task-forlovers/simpleDeploy)
+- 详情请点击查看
+
+## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/Docker-love)
+- 详情请点击查看
+
+## 常规前端部署
 
 1. **打包前端项目：** 使用VSCode或其他编辑器打包前端WebServer项目，并确保您已经生成了前端的`dist`文件。
 
@@ -52,7 +59,7 @@
 
 3. **新建站点：** 使用宝塔面板，在网站管理中新建一个站点。配置站点的域名、根目录等信息，确保站点的根目录指向您上传的`dist`文件夹。
 
-## 后端部署
+## 常规后端部署
 
 1. **打包后端项目：**
 - 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
@@ -82,13 +89,6 @@ tail -f output.log
 ![Image](image/3.png)
 >
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
-
-
-## [宝塔超级简单部署](https://github.com/Yanyutin753/shop-task-forlovers/simpleDeploy)
-- 详情请点击查看
-
-## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/Docker-love)
-- 详情请点击查看
 
 
 ## 展示内容
