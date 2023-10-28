@@ -20,5 +20,20 @@ nohup java -jar -Xmx1024M -Xms256M  /www/wwwroot/webServer/WebServer-0.0.1-SNAPS
 
 ## 初始注册密钥：小羊是帅哥
 - 注册之后可以修改
-- 记得一键三连，必须要给star⭐
+
+## 修改webserver表中的loginCheck里wechatNoticeKey的值
+wechatNoticeKey获取方法：
+###### 1.进入https://work.weixin.qq.com/
+点击注册信息随意填写
+然后依次点击 我的企业-微信插件-下拉使用微信扫描该二维码。
+（注）以上步骤是为了微信能够接受微信企业消息
+###### 2.进入手机微信
+进入自己新建的企业，新建一个群组。
+
+###### 3.进入手机企业微信
+选择新建的企业登录，进入创立的群组-选择右上角三个点-点击群组机器人-点击添加-随意输入名字-得到一个链接：
+https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=05e8b9b2-6be7-4d4b-bbce-54846851b450
+拿取（05e8b9b2-6be7-4d4b-bbce-54846851b450）部分 放入wechatNoticeKey
+
+## 记得一键三连，必须要给star⭐
 
