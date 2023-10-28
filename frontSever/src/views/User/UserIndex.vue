@@ -232,7 +232,7 @@ export default {
     };
     const copyToClipboard = () => {
       const generateShareLink = () => {
-        return `/api/#/`;
+        return `https://github.com/Yanyutin753/shop-task-forlovers`;
       };
       const shareLink = generateShareLink();
       const tempInput = document.createElement("input");
