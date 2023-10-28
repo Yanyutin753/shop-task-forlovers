@@ -83,6 +83,14 @@ tail -f output.log
 >
 - 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
+
+## [宝塔超级简单部署](https://github.com/Yanyutin753/shop-task-forlovers/simpleDeploy)里的内容
+- 详情请点击查看
+
+## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/Docker-love)
+- 详情请点击查看
+
+
 ## 展示内容
 
 ## 主页
