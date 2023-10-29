@@ -64,7 +64,7 @@
 1. **打包后端项目：**
 - 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目放在www\wwwroot\webServer下，之后把前端打包好的放在放在www\wwwroot\webServer\target\classes\static目录下
 
-- 2.没有idea，直接启动我打包好的包。 [后端启动包](https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar)
+- 2.没有idea，直接启动我打包好的包。 [后端启动包](https://github.com/Yanyutin753/shop-task-forlovers/blob/main/simpleDeploy/WebServer-0.0.1-SNAPSHOT.jar)
 
 - 3.用宝塔新建mysql数据库，
 数据库名字命名为：webserver
