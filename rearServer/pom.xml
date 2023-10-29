@@ -13,9 +13,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>WebServer</name>
     <description>WebServer</description>
+<!--docket打包需要在<java.version>11</java.version>添加下面依赖，正常部署打包则不需要需要-->
+<!--<skipTests>true</skipTests>-->
+
     <properties>
         <java.version>11</java.version>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -120,6 +124,12 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.26</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.8</version> <!-- 使用最新版本 -->
+        </dependency>
+
 
     </dependencies>
 

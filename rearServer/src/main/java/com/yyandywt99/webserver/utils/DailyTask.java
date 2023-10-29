@@ -4,6 +4,9 @@ package com.yyandywt99.webserver.utils;
  * @author Yangyang
  * @create 2023-10-19 19:22
  */
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.yyandywt99.webserver.pojo.Result;
 import com.yyandywt99.webserver.pojo.sendDayMessage;
 import com.yyandywt99.webserver.pojo.user;
@@ -21,12 +24,14 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ScheduledFuture;
 
 @RestController
@@ -48,6 +53,70 @@ public class DailyTask {
     private TaskScheduler taskScheduler;
 
     private Map<Integer, ScheduledFuture<?>> scheduledTasks = new HashMap<>();
+
+    public static String getBlessing() {
+        String[] blessings = {
+                "一愿你此生多福无病灾，二愿你南北虽隔不离散，三愿你郎君如意常相欢。",
+                "一愿你平安喜乐，二愿你幸福美满，三愿你快乐无边。",
+                "一愿你天天开心，二愿你事事顺心，三愿你岁岁平安。",
+                "一愿你笑口常开，二愿你好运连连，三愿你幸福永远。",
+                "一愿你心想事成，二愿你事业有成，三愿你幸福美满。",
+                "一愿你快乐无边，二愿你幸福永远，三愿你健康平安。",
+                "一愿你生活美满，二愿你事业有成，三愿你幸福永远。",
+                "一愿你笑口常开，二愿你好运连连，三愿你幸福美满。",
+                "一愿你心想事成，二愿你事业有成，三愿你幸福美满。",
+                "一愿你快乐无边，二愿你幸福永远，三愿你健康平安。",
+                "一愿你生活美满，二愿你事业有成，三愿你幸福永远。",
+                "一愿你笑口常开，二愿你好运连连，三愿你幸福美满。",
+                "一愿你心想事成，二愿你事业有成，三愿你幸福美满。",
+                "一愿你快乐无边，二愿你幸福永远，三愿你健康平安。",
+                "一愿你生活美满，二愿你事业有成，三愿你幸福永远。",
+                "一愿你笑口常开，二愿你好运连连，三愿你幸福美满。",
+                "一愿你心想事成，二愿你事业有成，三愿你幸福美满。",
+                "一愿你快乐无边，二愿你幸福永远，三愿你健康平安。",
+                "一愿你生活美满，二愿你事业有成，三愿你幸福永远。",
+                "一愿你笑口常开，二愿你好运连连，三愿你幸福美满."
+        };
+        Random random = new Random();
+        return blessings[random.nextInt(blessings.length)];
+    }
+
+    @GetMapping("weather")
+    public List<String> get_weather() {
+        List<String> res = null;
+        try {
+            res = new ArrayList<String>();
+            String apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=74a4a61251fa4284a92161943232810&q=xinxiang&days=1&aqi=yes&alerts=yes";
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+            JsonObject data = JsonParser.parseString(response.toString()).getAsJsonObject();
+            // 获取天气信息
+            String weather = data.getAsJsonObject("current").getAsJsonObject("condition").get("text").getAsString();
+            double temp_c = data.getAsJsonObject("current").get("temp_c").getAsDouble();
+
+            JsonArray forecastDays = data.getAsJsonObject("forecast").getAsJsonArray("forecastday");
+            JsonObject forecast = forecastDays.get(0).getAsJsonObject();
+            JsonObject day = forecast.getAsJsonObject("day");
+            double max_temp = day.get("maxtemp_c").getAsDouble();
+            double min_temp = day.get("mintemp_c").getAsDouble();
+            res.add(weather);
+            res.add(temp_c + "");
+            res.add(max_temp + "");
+            res.add(min_temp + "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
 
     @GetMapping("openRemind")
     public Result createDynamicScheduledTasks() {
@@ -123,26 +192,31 @@ public class DailyTask {
             String formattedDate = today.format(formatter);
             sendDayMessage sendMessage = operateLogService.selectMessage(tem.getNameId());
             log.info(sendMessage.toString());
-            LocalDate targetDate1 = LocalDate.of(2022, 10, 6);
-            LocalDate targetDate2 = LocalDate.of(2022, 9, 9);
+            LocalDate targetDate1 = LocalDate.parse(tem.getDisplayDay(), DateTimeFormatter.ISO_LOCAL_DATE);
             // 获取当前日期
             LocalDate currentDate = LocalDate.now();
-
             // 使用ChronoUnit计算日期差
             long daysUntilTargetDate1 = ChronoUnit.DAYS.between(targetDate1, currentDate);
-            long daysUntilTargetDate2 = ChronoUnit.DAYS.between(targetDate2, currentDate);
             Map<String, String> contentMap = new HashMap<>();
             contentMap.put("content", "@"+tem.getName()+
-                    "\n\n📅 "+ formattedDate+
-                    "\n\n\uD83D\uDC3C\uD83D\uDC3C和\uD83C\uDF8B\uD83C\uDF8B相识："+daysUntilTargetDate1+"天"+
-                    "\n\n\uD83D\uDC3C\uD83D\uDC3C和\uD83C\uDF8B\uD83C\uDF8B一起："+daysUntilTargetDate2+"天"+
-                    "\n\n💰今日积分数："+tem.getCredit()+
-                    "\n\n👑今日获得积分："+sendMessage.getDayCredit()+
-                    "\n\n🧾今日任务完成："+sendMessage.getDayCompleteTask()+
-                    "\n\n🧩今日添加任务："+sendMessage.getDayAddTask()+
-                    "\n\n🎁今日添加商品："+sendMessage.getDayAddProduce()+
-                    "\n\n💰今日购买商品："+sendMessage.getDayBuyProduce()+
-                    "\n\n🧸今日兑换商品: "+"  "+sendMessage.getDayReduceRoom()+
+                    "\n🥰亲爱的"+tem.getName()+"宝宝！"+
+                    "\n🌹"+getBlessing()+
+                    "\n\n📅今天"+ formattedDate+
+//                    "\n🏫天气情况："+ get_weather().get(0) +
+                    "\n"+tem.getDisplayItem()+"："+daysUntilTargetDate1+"天\n💏今天又是爱你的一天😘"+
+//                    "\n\n👑下面是"+tem.getName()+"专属天气预报☁"+
+//                    "\n☀今天天气："+get_weather().get(0)+"\n💨平均温度："+get_weather().get(1)+"°C"+
+//                    "\n🔥最高温度："+get_weather().get(2)+"°C"+
+//                    "\n❄最低温度："+get_weather().get(3)+"°C"+
+//                    "\n⭐注意天气变化，及时穿衣👗"+
+                    "\n\n🌈下面是"+tem.getName()+"专属任务报告🏆"+
+                    "\n💰今日积分数："+tem.getCredit()+
+                    "\n✨今日获得积分："+sendMessage.getDayCredit()+
+                    "\n🧾今日任务完成："+sendMessage.getDayCompleteTask()+
+                    "\n🧩今日添加任务："+sendMessage.getDayAddTask()+
+                    "\n🎁今日添加商品："+sendMessage.getDayAddProduce()+
+                    "\n💰今日购买商品："+sendMessage.getDayBuyProduce()+
+                    "\n🧸今日兑换商品: "+"  "+sendMessage.getDayReduceRoom()+
                     "\n\n"+tem.getRemindText());
             sendMap.put("text", contentMap);
             String NOTICE_KEY = userService.getWechatNoticeKey();
