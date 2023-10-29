@@ -1,15 +1,6 @@
 ###### 安装docket
 ```
-sudo su -
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-#检查Docker版本：
-docker version
-
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-#检查Docker Compose版本：
-docker-compose version
+sudo apt-get install docker
 
 ```
 ##### 将安装包解压到/www/wwwroot/webServer路径,并把Docker-love里的内容复制到该目录下下，如果更换路径请在脚本中自行替换
