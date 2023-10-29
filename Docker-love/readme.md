@@ -1,8 +1,9 @@
-##### 将安装包解压到/www/wwwroot/webServer路径下，如果更换路径请在脚本中自行替换
+##### 将安装包解压到/www/wwwroot/webServer路径,并把Docker-love里的内容复制到该目录下下，如果更换路径请在脚本中自行替换
 
 ##### 运行install.sh 一键安装
 ```bash
-sh ./install
+cd /www/wwwroot/webServer
+sudo sh install.sh
 ```
 ##### 请确保以下条件：
 
