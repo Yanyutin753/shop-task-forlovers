@@ -44,7 +44,14 @@
 - 更多功能期待开发
 
 ## 部署指南
-## 前端部署
+
+## [宝塔超级简单部署](https://github.com/Yanyutin753/shop-task-forlovers/simpleDeploy)
+- 详情请点击查看
+
+## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/Docker-love)
+- 详情请点击查看
+
+## 常规前端部署
 
 1. **打包前端项目：** 使用VSCode或其他编辑器打包前端WebServer项目，并确保您已经生成了前端的`dist`文件。
 
@@ -52,10 +59,10 @@
 
 3. **新建站点：** 使用宝塔面板，在网站管理中新建一个站点。配置站点的域名、根目录等信息，确保站点的根目录指向您上传的`dist`文件夹。
 
-## 后端部署
+## 常规后端部署
 
 1. **打包后端项目：**
-- 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目
+- 1.使用IntelliJ IDEA或其他Java集成开发环境打包后端项目放在www\wwwroot\webServer下，之后把前端打包好的放在放在www\wwwroot\webServer\target\classes\static目录下
 
 - 2.没有idea，直接启动我打包好的包。 [后端启动包](https://github.com/Yanyutin753/SpringBoot-/blob/main/server/target/WebServer-0.0.1-SNAPSHOT.jar)
 
@@ -72,16 +79,8 @@ nohup java -jar WebServer-0.0.1-SNAPSHOT.jar --spring.datasource.password=(你�
 tail -f output.log
 ```
 
--5.配置mysql数据库表
+- 5.可以自行在userTable填写内容，或者打开网页进行注册，初始注册密钥为[小样是帅哥]，添加内容
 
-点击管理
-![Image](image/2.png)
->
-点击SQL复制[文件](https://github.com/Yanyutin753/shop-task-forlovers/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BAsql.txt)里的内容
-
-![Image](image/3.png)
->
-- 6.可以自行在userTable填写内容，或者打开网页进行注册，添加内容
 
 ## 展示内容
 
@@ -110,12 +109,6 @@ tail -f output.log
 
 - 敲代码不易，希望客官给点赞助，让我更好修改代码！
   
-
-
-感谢您的兴趣和支持！
-
-
-
-
+### 十分感谢[springli07](https://github.com/springli07)贡献的docket部署版本
 感谢您的兴趣和支持！
 

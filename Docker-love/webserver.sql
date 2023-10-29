@@ -44,16 +44,7 @@ CREATE TABLE `detailusertable` (
   `allReduceRoom` int(11) DEFAULT '0' COMMENT '兑换商品总数'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 转存表中的数据 `detailusertable`
---
-
-INSERT INTO `detailusertable` (`userId`, `useName`, `allCredit`, `dayCredit`, `allCompleteTask`, `dayCompleteTask`, `allAddTask`, `dayAddTask`, `allAddProduce`, `dayAddProduce`, `allBuyProduce`, `dayBuyProduce`, `dayReduceRoom`, `allReduceRoom`) VALUES
-(1, 'yangyang', 1000000, 1000000, 3, 3, 2, 2, 0, 0, 4, 4, 4, 4),
-(2, 'he', 0, 0, 2, 2, 3, 3, 4, 4, 0, 0, 0, 0);
-
 -- --------------------------------------------------------
-
 --
 -- 表的结构 `homebroadcast`
 --
@@ -99,43 +90,7 @@ CREATE TABLE `operate_log` (
   `cost_time` bigint(20) DEFAULT NULL COMMENT '方法执行耗时, 单位:ms'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='操作日志表';
 
---
--- 转存表中的数据 `operate_log`
---
-
-INSERT INTO `operate_log` (`id`, `operate_user`, `operate_time`, `class_name`, `method_name`, `method_params`, `return_value`, `cost_time`) VALUES
-(1, NULL, '2023-10-28 02:04:08', 'com.yyandywt99.webserver.controller.userController', 'addUser', '[user(nameId=0, name=yangyang, password=123456, userText=ada, userImage=http://101.42.31.20:8081/image/e23c3b58-da79-4101-b2f2-b9410672795d.gif, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=null, displayItem=null, displayDay=null, displayLogo=null, displayUrl=null)]', '{\"code\":1,\"data\":\"添加成功！\",\"msg\":\"success\"}', 70),
-(2, NULL, '2023-10-28 02:05:00', 'com.yyandywt99.webserver.controller.userController', 'addUser', '[user(nameId=0, name=he, password=123456, userText=he, userImage=http://101.42.31.20:8081/image/02836a17-2b76-436a-806f-aa0693298172.jpg, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=null, displayItem=null, displayDay=null, displayLogo=null, displayUrl=null)]', '{\"code\":1,\"data\":\"添加成功！\",\"msg\":\"success\"}', 23),
-(3, 2, '2023-10-28 02:10:48', 'com.yyandywt99.webserver.controller.produceController', 'addProduce', '[produce(produceId=null, founderId=2, produceName=奶茶权限, produceText=凭此券可以向对方索要一杯奶茶。, produceImage=http://101.42.31.20:8081/image/14f66f86-a785-45af-992a-3ddd46d46c0a.jpg, produceCredit=100, produceNum=1, checkProduce=false, customer=yangyang, checkLove=false, updateTime=null, registerTime=null)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 663),
-(4, 2, '2023-10-28 02:17:38', 'com.yyandywt99.webserver.controller.taskController', 'addTask', '[task(taskId=null, founderId=2, useName=yangyang, userImage=null, taskName=打扫房间, taskText=有一段时间没有打扫房间了，一屋不扫，何以扫天下？, taskCredit=0, registerTime=null, updateTime=null, checkTask=false, checkLove=false)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 703),
-(5, 2, '2023-10-28 02:19:14', 'com.yyandywt99.webserver.controller.produceController', 'addProduce', '[produce(produceId=null, founderId=2, produceName=美味薯片, produceText=诱人的零食，夜宵绝佳伴侣，咔嘣脆！凭此商品可以向对方索要薯片。, produceImage=http://101.42.31.20:8081/image/4bcf8a15-f3cc-433b-b1d8-909692f9fea7.jpg, produceCredit=100, produceNum=1, checkProduce=false, customer=yangyang, checkLove=false, updateTime=null, registerTime=null)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 375),
-(6, 2, '2023-10-28 02:22:33', 'com.yyandywt99.webserver.controller.produceController', 'addProduce', '[produce(produceId=null, founderId=2, produceName=奶茶权限, produceText=凭此券可以向对方索要一杯奶茶。, produceImage=http://101.42.31.20:8081/image/1a51c0ce-a3c6-474f-b99c-f2d992190095.jpg, produceCredit=10, produceNum=1, checkProduce=false, customer=yangyang, checkLove=false, updateTime=null, registerTime=null)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 368),
-(7, 2, '2023-10-28 02:26:08', 'com.yyandywt99.webserver.controller.taskController', 'addTask', '[task(taskId=null, founderId=2, useName=yangyang, userImage=null, taskName=hello, taskText=w, taskCredit=0, registerTime=null, updateTime=null, checkTask=false, checkLove=false)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 348),
-(8, 2, '2023-10-28 02:31:35', 'com.yyandywt99.webserver.controller.produceController', 'addProduce', '[produce(produceId=null, founderId=2, produceName=h, produceText=j, produceImage=http://101.42.31.20:8081/image/e2e60c0a-0692-4579-b608-bea3623bf20e.jpeg, produceCredit=10, produceNum=1, checkProduce=false, customer=yangyang, checkLove=false, updateTime=null, registerTime=null)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 624),
-(9, 1, '2023-10-28 02:35:33', 'com.yyandywt99.webserver.controller.taskController', 'addTask', '[task(taskId=null, founderId=1, useName=he, userImage=null, taskName=早睡早起, taskText=熬夜对身体很不好，还是要早点睡觉第二天才能有精神！, taskCredit=0, registerTime=null, updateTime=null, checkTask=false, checkLove=false)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 399),
-(10, 1, '2023-10-28 02:41:10', 'com.yyandywt99.webserver.controller.taskController', 'addTask', '[task(taskId=null, founderId=1, useName=he, userImage=null, taskName=白天不睡觉, taskText=白天不睡觉，晚上早睡，早上早起，养成良好生活作息从我做起！, taskCredit=0, registerTime=null, updateTime=null, checkTask=false, checkLove=false)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 347),
-(11, 1, '2023-10-28 02:41:49', 'com.yyandywt99.webserver.controller.userController', 'requireUser', '[user(nameId=1, name=null, password=null, userText=null, userImage=null, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=hrllo, displayItem=null, displayDay=null, displayLogo=null, displayUrl=null)]', '{\"code\":1,\"data\":\"修改成功\",\"msg\":\"success\"}', 43),
-(12, 2, '2023-10-28 02:54:48', 'com.yyandywt99.webserver.controller.taskController', 'completedTask', '[2]', '{\"code\":1,\"data\":\"成功完成任务，你真棒！\",\"msg\":\"success\"}', 751),
-(13, 2, '2023-10-28 02:54:55', 'com.yyandywt99.webserver.controller.taskController', 'completedTask', '[1]', '{\"code\":1,\"data\":\"成功完成任务，你真棒！\",\"msg\":\"success\"}', 658),
-(14, 2, '2023-10-28 02:55:25', 'com.yyandywt99.webserver.controller.taskController', 'addTask', '[task(taskId=null, founderId=2, useName=yangyang, userImage=null, taskName=hello, taskText=哈哈哈, taskCredit=1000000, registerTime=null, updateTime=null, checkTask=false, checkLove=false)]', '{\"code\":1,\"data\":\"添加成功\",\"msg\":\"success\"}', 371),
-(15, 1, '2023-10-28 02:55:58', 'com.yyandywt99.webserver.controller.taskController', 'completedTask', '[4]', '{\"code\":1,\"data\":\"成功完成任务，你真棒！\",\"msg\":\"success\"}', 679),
-(16, 1, '2023-10-28 02:56:02', 'com.yyandywt99.webserver.controller.taskController', 'completedTask', '[3]', '{\"code\":1,\"data\":\"成功完成任务，你真棒！\",\"msg\":\"success\"}', 699),
-(17, 2, '2023-10-28 02:56:23', 'com.yyandywt99.webserver.controller.taskController', 'completedTask', '[5]', '{\"code\":1,\"data\":\"成功完成任务，你真棒！\",\"msg\":\"success\"}', 727),
-(18, 1, '2023-10-28 02:56:57', 'com.yyandywt99.webserver.controller.produceController', 'buyProduce', '[4]', '{\"code\":1,\"data\":1,\"msg\":\"success\"}', 429),
-(19, 1, '2023-10-28 02:57:01', 'com.yyandywt99.webserver.controller.produceController', 'buyProduce', '[3]', '{\"code\":1,\"data\":2,\"msg\":\"success\"}', 385),
-(20, 1, '2023-10-28 02:57:07', 'com.yyandywt99.webserver.controller.produceController', 'buyProduce', '[2]', '{\"code\":1,\"data\":3,\"msg\":\"success\"}', 452),
-(21, 1, '2023-10-28 02:57:10', 'com.yyandywt99.webserver.controller.produceController', 'buyProduce', '[1]', '{\"code\":1,\"data\":4,\"msg\":\"success\"}', 392),
-(22, 1, '2023-10-28 02:57:20', 'com.yyandywt99.webserver.controller.roomController', 'reduceRoom', '[4]', '{\"code\":1,\"data\":5,\"msg\":\"success\"}', 27),
-(23, 1, '2023-10-28 02:57:26', 'com.yyandywt99.webserver.controller.roomController', 'reduceRoom', '[1]', '{\"code\":1,\"data\":6,\"msg\":\"success\"}', 26),
-(24, 1, '2023-10-28 02:57:29', 'com.yyandywt99.webserver.controller.roomController', 'reduceRoom', '[2]', '{\"code\":1,\"data\":7,\"msg\":\"success\"}', 28),
-(25, 1, '2023-10-28 02:57:32', 'com.yyandywt99.webserver.controller.roomController', 'reduceRoom', '[3]', '{\"code\":1,\"data\":8,\"msg\":\"success\"}', 25),
-(26, 1, '2023-10-28 09:28:55', 'com.yyandywt99.webserver.controller.userController', 'requireUser', '[user(nameId=1, name=null, password=null, userText=null, userImage=null, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=null, displayItem=, displayDay=, displayLogo=🏰捏捏的魔仙堡, displayUrl=, signPassword=null)]', '{\"code\":1,\"data\":\"修改成功\",\"msg\":\"success\"}', 64),
-(27, 1, '2023-10-28 09:29:04', 'com.yyandywt99.webserver.controller.userController', 'requireUser', '[user(nameId=1, name=null, password=null, userText=null, userImage=null, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=null, displayItem=, displayDay=, displayLogo=, displayUrl=http://101.42.31.20:8081/#/, signPassword=null)]', '{\"code\":1,\"data\":\"修改成功\",\"msg\":\"success\"}', 11),
-(28, NULL, '2023-10-28 10:56:42', 'com.yyandywt99.webserver.controller.userController', 'addUser', '[user(nameId=0, name=yy, password=123456, userText=gjkhk, userImage=http://101.42.31.20:8081/image/ece7fd0b-f091-4285-8412-ed6ca23b0d29.jpg, credit=0, registerTime=null, updateTime=null, remindTime=null, remindSwitch=false, remindText=null, displayItem=null, displayDay=null, displayLogo=null, displayUrl=null, signPassword=小羊是帅哥)]', '{\"code\":1,\"data\":\"添加成功！\",\"msg\":\"success\"}', 86),
-(29, 3, '2023-10-28 10:56:59', 'com.yyandywt99.webserver.controller.userController', 'deleteUser', '[3]', '{\"code\":1,\"data\":\"删除成功！\",\"msg\":\"success\"}', 20);
-
 -- --------------------------------------------------------
-
 --
 -- 表的结构 `producetable`
 --
@@ -174,15 +129,6 @@ CREATE TABLE `roomtable` (
   `checkLove` tinyint(1) DEFAULT '0' COMMENT '商品是否收藏'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 转存表中的数据 `roomtable`
---
-
-INSERT INTO `roomtable` (`produceId`, `founderId`, `produceName`, `produceText`, `produceImage`, `produceNum`, `checkProduce`, `useName`, `updateTime`, `registerTime`, `checkLove`) VALUES
-(5, 1, '奶茶权限', '凭此券可以向对方索要一杯奶茶。', 'http://101.42.31.20:8081/image/14f66f86-a785-45af-992a-3ddd46d46c0a.jpg', 1, 1, 'yangyang', '2023-10-28 02:57:20', '2023-10-28 02:57:20', 0),
-(6, 1, 'h', 'j', 'http://101.42.31.20:8081/image/e2e60c0a-0692-4579-b608-bea3623bf20e.jpeg', 1, 1, 'yangyang', '2023-10-28 02:57:26', '2023-10-28 02:57:26', 0),
-(7, 1, '奶茶权限', '凭此券可以向对方索要一杯奶茶。', 'http://101.42.31.20:8081/image/1a51c0ce-a3c6-474f-b99c-f2d992190095.jpg', 1, 1, 'yangyang', '2023-10-28 02:57:29', '2023-10-28 02:57:29', 0),
-(8, 1, '美味薯片', '诱人的零食，夜宵绝佳伴侣，咔嘣脆！凭此商品可以向对方索要薯片。', 'http://101.42.31.20:8081/image/4bcf8a15-f3cc-433b-b1d8-909692f9fea7.jpg', 1, 1, 'yangyang', '2023-10-28 02:57:32', '2023-10-28 02:57:32', 0);
 
 -- --------------------------------------------------------
 
@@ -203,18 +149,6 @@ CREATE TABLE `tasktable` (
   `checkLove` tinyint(4) DEFAULT '0' COMMENT '是否收藏'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 转存表中的数据 `tasktable`
---
-
-INSERT INTO `tasktable` (`taskId`, `founderId`, `useName`, `taskName`, `taskText`, `taskCredit`, `updateTime`, `registerTime`, `checkTask`, `checkLove`) VALUES
-(1, 2, 'yangyang', '打扫房间', '有一段时间没有打扫房间了，一屋不扫，何以扫天下？', 0, '2023-10-28 02:54:55', '2023-10-28 02:17:38', 1, 0),
-(2, 2, 'yangyang', 'hello', 'w', 0, '2023-10-28 02:54:47', '2023-10-28 02:26:07', 1, 0),
-(3, 1, 'he', '早睡早起', '熬夜对身体很不好，还是要早点睡觉第二天才能有精神！', 0, '2023-10-28 02:56:02', '2023-10-28 02:35:33', 1, 0),
-(4, 1, 'he', '白天不睡觉', '白天不睡觉，晚上早睡，早上早起，养成良好生活作息从我做起！', 0, '2023-10-28 02:55:58', '2023-10-28 02:41:09', 1, 1),
-(5, 2, 'yangyang', 'hello', '哈哈哈', 1000000, '2023-10-28 02:56:23', '2023-10-28 02:55:25', 1, 0);
-
--- --------------------------------------------------------
 
 --
 -- 表的结构 `temtasktable`
@@ -257,13 +191,6 @@ CREATE TABLE `usertable` (
   `displayUrl` varchar(50) NOT NULL DEFAULT 'http://121.37.243.173/#/' COMMENT '展示二维码内容'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- 转存表中的数据 `usertable`
---
-
-INSERT INTO `usertable` (`nameId`, `name`, `password`, `userText`, `userImage`, `credit`, `updateTime`, `remindText`, `remindSwitch`, `remindTime`, `registerTime`, `displayItem`, `displayDay`, `displayLogo`, `displayUrl`) VALUES
-(1, 'yangyang', '123456', 'ada', 'http://101.42.31.20:8081/image/e23c3b58-da79-4101-b2f2-b9410672795d.gif', 999780, '2023-10-28 09:29:03', 'hrllo', 1, '0 30 11 * * ?', '2023-10-28 02:04:07', '♥在一起', '2022-10-06', '🏰捏捏的魔仙堡', 'http://101.42.31.20:8081/#/'),
-(2, 'he', '123456', 'he', 'http://101.42.31.20:8081/image/02836a17-2b76-436a-806f-aa0693298172.jpg', 0, '2023-10-28 02:56:02', NULL, 1, '0 30 11 * * ?', '2023-10-28 02:04:59', '♥在一起', '2022-10-06', '?捏捏的魔仙堡', 'http://121.37.243.173/#/');
 
 --
 -- 转储表的索引
