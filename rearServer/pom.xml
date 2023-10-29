@@ -14,11 +14,12 @@
     <name>WebServer</name>
     <description>WebServer</description>
 <!--docket打包需要在<java.version>11</java.version>添加下面依赖，正常部署打包则不需要需要-->
-<!--<skipTests>true</skipTests>-->
-
+<!--    <skipTests>true</skipTests>-->
     <properties>
         <java.version>11</java.version>
+
     </properties>
+
 
 
     <dependencies>
