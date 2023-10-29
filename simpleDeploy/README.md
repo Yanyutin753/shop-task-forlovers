@@ -1,5 +1,19 @@
 ## 安装jdk11（推荐） 和 mysql 5.7以上
 
+```
+#先拿到管理员权限
+sudo su -
+#安装过程中可能会提示你输入密码进行确认。输入密码并按照提示完成安装。
+#安装 OpenJDK 11：
+sudo apt install openjdk-11-jdk
+安装完成后，可以通过运行以下命令来验证 JDK 安装：
+java -version
+在终端中运行以下命令来安装 MySQL 5.7：
+sudo apt install mysql-server-5.7
+安装完成后，可以通过运行以下命令来验证 MySQL 安装：
+mysql --version
+```
+
 ## 将simpleDeploy里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
 
 ![image](https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/74ca8130-491e-4ed2-b6e5-eacd635dfb0d)
@@ -12,7 +26,8 @@
 
 ## 终端输入命令
 ```
-注意替换spring.datasource.password=（你的webserver数据库密码）
+#注意替换spring.datasource.password=（你的webserver数据库密码）
+cd /www/wwwroot/webServer
 nohup java -jar -Xmx1024M -Xms256M  /www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar --spring.datasource.password=（你的webserver数据库密码） --spring.datasource.username=webserver> output.log 2>&1 &
 ```
 
