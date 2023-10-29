@@ -3,17 +3,20 @@
 ```
 #先拿到管理员权限
 sudo su -
-#安装过程中可能会提示你输入密码进行确认。输入密码并按照提示完成安装。
+#提示你输入密码进行确认。输入密码并按照提示完成验证。
+
 #安装 OpenJDK 11：
 sudo apt install openjdk-11-jdk
 安装完成后，可以通过运行以下命令来验证 JDK 安装：
 java -version
+
 在终端中运行以下命令来安装 MySQL 5.7：
 sudo apt install mysql-server-5.7
 安装完成后，可以通过运行以下命令来验证 MySQL 安装：
 mysql --version
-```
 
+```
+- 或者宝塔选择装java和mysql就行（推荐）
 ## 将simpleDeploy里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
 
 ![image](https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/74ca8130-491e-4ed2-b6e5-eacd635dfb0d)
