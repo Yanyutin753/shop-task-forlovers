@@ -1,3 +1,4 @@
+## 不接受白嫖，使用请点star⭐
 ###### 安装docket
 ```
 sudo apt-get install docker
