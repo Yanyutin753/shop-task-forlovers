@@ -30,6 +30,8 @@ mysql --version
 
 ## 终端输入命令
 ```
+#需要拿到管理员权限
+sudo su - 
 #注意替换spring.datasource.password=（你的webserver数据库密码）
 cd /www/wwwroot/webServer
 nohup java -jar -Xmx1024M -Xms256M  /www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar --spring.datasource.password=（你的webserver数据库密码） --spring.datasource.username=webserver> output.log 2>&1 &
