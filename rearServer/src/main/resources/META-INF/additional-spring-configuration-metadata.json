@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "ssl",
-      "type": "java.lang.String",
-      "description": "Description for ssl."
-  }
-] }
