@@ -49,7 +49,7 @@
 ## [宝塔超级简单部署](https://github.com/Yanyutin753/shop-task-forlovers/tree/simpleDeploy)
 - 详情请点击查看
 
-## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/tree/docker)
+## [docket部署](https://github.com/Yanyutin753/shop-task-forlovers/tree/docket)
 - 详情请点击查看
 
 ## 常规前端部署
