@@ -18,7 +18,11 @@ mysql --version
 
 ```
 - 或者宝塔选择装java和mysql就行（推荐）
-## 将simpleDeploy里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
+
+# 直接下载压缩包到桌面
+<img width="751" alt="image" src="https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/b6974218-8be3-4d09-98ac-e8d9d5971677">
+
+## 将解压之后的simpleDeploy压缩包里的文件拷贝到/www/wwwroot/webServer路径下，暂不支持修改别的路径
 
 ![image](https://github.com/Yanyutin753/shop-task-forlovers/assets/132346501/74ca8130-491e-4ed2-b6e5-eacd635dfb0d)
 
