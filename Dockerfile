@@ -12,4 +12,4 @@ COPY target /www/wwwroot/webServer/target
 EXPOSE 8082
 WORKDIR /www/wwwroot/webServer/
 # 指定docker容器启动时运行jar包
-ENTRYPOINT ["java", "-jar","/www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar","--spring.datasource.username=root","--spring.datasource.password=lichun123456","--server.port=8082"]
+ENTRYPOINT ["java", "-jar","/www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar","--spring.datasource.username=root","--spring.datasource.password=lichun123456","--server.port=8082","--spring.datasource.url=jdbc:mysql://db:3306/webserver"]
