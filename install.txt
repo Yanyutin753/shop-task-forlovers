@@ -5,7 +5,7 @@ dir=$(pwd)
 echo "当前路径: $dir"
 
 echo "创建mysql容器并启动"
-docker run -p 8080:3306 --name mysql \
+docker run -p 8081:3306 --name mysql \
 -v /export/mysql/conf:/etc/mysql/conf.d \
 -v /export/mysql/log:/var/log/mysql \
 -v /export/mysql/data:/var/lib/mysql \
@@ -37,7 +37,7 @@ echo "构建docker webserver应用镜像"
 docker build -t webserver/webserver-0.0.1 .
 echo "创建容器并启动"
 # 2.创建容器并启动
-docker run -d -p 8082:8081 \
+docker run -d -p 8082:8082 \
 --name webserver \
 --link mysql:db \
 -v /export/Logs/WebServer-0.0.1:/export/Logs/WebServer-0.0.1 \

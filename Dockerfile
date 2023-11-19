@@ -8,8 +8,8 @@ MAINTAINER spring
 COPY WebServer-0.0.1-SNAPSHOT_docker.jar /www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar
 COPY target /www/wwwroot/webServer/target
  
-# 声明服务运行在8081端口
-EXPOSE 8081
+# 声明服务运行在8082端口
+EXPOSE 8082
 WORKDIR /www/wwwroot/webServer/
 # 指定docker容器启动时运行jar包
 ENTRYPOINT ["java", "-jar","/www/wwwroot/webServer/WebServer-0.0.1-SNAPSHOT.jar","--spring.datasource.username=root","--spring.datasource.password=lichun123456"]

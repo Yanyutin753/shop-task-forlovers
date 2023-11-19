@@ -10,7 +10,7 @@ sudo apt-get install docker
 
 - [x] 目录结构一致
 ![Alt text](image-1.png)
-- [x] 8081(网页)，8080（数据库），你选择的访问服务端口防火墙已开放
+- [x] 8082(网页)，8081（数据库），你选择的访问服务端口防火墙已开放
 - [x] 使用root权限运行该脚本
 - [x] 在webserver.sql中修改对应的参数
 
@@ -35,15 +35,28 @@ https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=05e8b9b2-6be7-4d4b-bbce-548
 拿取（05e8b9b2-6be7-4d4b-bbce-54846851b450）部分 放入wechatNoticeKey
 
 
-## 2. 访问服务端口设置位于install.sh 文件 38行位置
-示例 修改为8888 端口：
+## 2. 访问服务端口设置位于install.sh 文件 40行位置
+
+示例 修改为8082 端口：
 ```bash
-docker run -d -p 8888:8081 \
+docker run -d -p 8082:8082 \
 --name webserver \
 --link mysql:db \
 -v /export/Logs/WebServer-0.0.1:/export/Logs/WebServer-0.0.1 \
 webserver/webserver-0.0.1
-echo "启动成功 请打开8888端口查看"
+echo "启动成功 请打开8082端口查看"
+```
+## 3. 访问数据库端口设置位于install.sh 文件 8行位置
+
+示例 修改为8081 端口：
+```bash
+docker run -p 8081:3306 --name mysql \
+-v /export/mysql/conf:/etc/mysql/conf.d \
+-v /export/mysql/log:/var/log/mysql \
+-v /export/mysql/data:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=lichun123456  \
+-d mysql:5.7
+echo "mysql运行成功"
 ```
 
 ## 运行install.sh 一键安装
