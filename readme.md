@@ -1,8 +1,21 @@
 ## 不接受白嫖，使用请点star⭐
-###### 安装docket
-```
+###### 安装docker和获取文件
+```bash
+# 安装docker
 sudo apt-get install docker
+cd /www/wwwroot/webServer
 
+# 安装git
+sudo apt update
+sudo apt install git
+
+# 国内服务器
+git clone https://gitee.com/yangyangEN/docker-lover.git
+# 国外服务器
+git clone https://github.com/Yanyutin753/docker-lover.git
+
+mv docker-lover/* .
+rm -r docker-lover
 ```
 ##### 将安装包解压到/www/wwwroot/webServer路径,并把Docker-love里的内容复制到该目录下下，如果更换路径请在脚本中自行替换
 
