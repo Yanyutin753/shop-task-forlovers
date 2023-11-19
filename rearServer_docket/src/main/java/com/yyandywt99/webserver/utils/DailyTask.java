@@ -86,7 +86,7 @@ public class DailyTask {
         List<String> res = null;
         try {
             res = new ArrayList<String>();
-            String apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=74a4a61251fa4284a92161943232810&q=xinxiang&days=1&aqi=yes&alerts=yes";
+            String apiUrl = "http://api.weatherapi.com/v1/forecast.json?key=74ahkjh1251fa4284a92161943232810&q=xinxiang&days=1&aqi=yes&alerts=yes";
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
