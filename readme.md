@@ -6,16 +6,11 @@ sudo apt-get install docker
 ```
 ##### 将安装包解压到/www/wwwroot/webServer路径,并把Docker-love里的内容复制到该目录下下，如果更换路径请在脚本中自行替换
 
-##### 运行install.sh 一键安装
-```bash
-cd /www/wwwroot/webServer
-sudo sh install.sh
-```
 ##### 请确保以下条件：
 
 - [x] 目录结构一致
 ![Alt text](image-1.png)
-- [x] 8081，3306，你选择的访问服务端口防火墙已开放
+- [x] 8081(网页)，8080（数据库），你选择的访问服务端口防火墙已开放
 - [x] 使用root权限运行该脚本
 - [x] 在webserver.sql中修改对应的参数
 
@@ -39,6 +34,7 @@ wechatNoticeKey获取方法：
 https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=05e8b9b2-6be7-4d4b-bbce-54846851b450
 拿取（05e8b9b2-6be7-4d4b-bbce-54846851b450）部分 放入wechatNoticeKey
 
+
 ## 2. 访问服务端口设置位于install.sh 文件 38行位置
 示例 修改为8888 端口：
 ```bash
@@ -49,17 +45,16 @@ docker run -d -p 8888:8081 \
 webserver/webserver-0.0.1
 echo "启动成功 请打开8888端口查看"
 ```
-## 3. 如遇数据库导入报错
 
+## 运行install.sh 一键安装
+```bash
+cd /www/wwwroot/webServer
+sudo sh install.sh
+```
+
+## 如遇数据库导入报错
 可将以下命令重新执行
 ```bash
-docker exec -i -t mysql /bin/bash -c "/sql.sh"
+docker exec -i -t mysql /bin/bash -c "chmod +x /sql.sh && /sql.sh"
 ```
-从新执行该命令即可
 
-## 更新：
-已将数据库处理代码去除：
-待一键运行结束后，再运行以下代码运行，以导入数据库数据。
-```bash
-docker exec -i -t mysql /bin/bash -c "/sql.sh"
-```
