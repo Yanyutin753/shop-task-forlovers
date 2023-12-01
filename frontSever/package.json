@@ -16,12 +16,13 @@
     "vant": "^4.6.8",
     "vue": "^3.2.13",
     "vue-head": "^2.2.0",
-    "vue-router": "^4.0.13",
+    "vue-router": "^4.2.5",
     "vuedraggable": "^2.24.3",
     "vuex": "^4.1.0",
     "vuex-along": "^1.2.13"
   },
   "devDependencies": {
+    "@types/webpack-env": "^1.18.4",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",

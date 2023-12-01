@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
-    { path: '/', component: () => import('@/views/Home/HomeIndex.vue'), meta: { title: '🦄欢迎来到卡比之家',keepAlive: true }},
-    { path: '/Task', component: () => import('@/views/Task/TaskIndex.vue'), meta: { title: '🦄欢迎来到卡比的任务中心',keepAlive: true } },
-    { path: '/Produce', component: () => import('@/views/Produce/ProduceIndex.vue'), meta: { title: '🦄欢迎来到卡比商城',keepAlive: true } },
-    { path: '/Room', component: () => import('@/views/Room/RoomIndex.vue'), meta: { title: '🦄欢迎来到卡比仓库',keepAlive: true } },
+    { path: '/', component: () => import('@/views/Home/HomeIndex.vue'), meta: { title: '🦄欢迎来到捏捏的魔仙堡',keepAlive: true }},
+    { path: '/Task', component: () => import('@/views/Task/TaskIndex.vue'), meta: { title: '🦄欢迎来到魔仙堡的任务中心',keepAlive: true } },
+    { path: '/Produce', component: () => import('@/views/Produce/ProduceIndex.vue'), meta: { title: '🦄欢迎来到魔仙堡商城',keepAlive: true } },
+    { path: '/Room', component: () => import('@/views/Room/RoomIndex.vue'), meta: { title: '🦄欢迎来到魔仙堡仓库',keepAlive: true } },
     { path: '/User', component: () => import('@/views/User/UserIndex.vue'), meta: { title: '🦄欢迎来到专属用户中心',keepAlive: true } },
     
     { path: '/UserRequire/:id', component: () => import('@/views/Add/UserRequireIndex.vue'), meta: { title: '🧩用户设置中心' } },
@@ -25,9 +25,9 @@ const routes = [
     { path: '/wechatTaskDisplay/:id', component: () => import('@/views/display/wechatTaskDisplay.vue'), meta: { title: '欢迎-来到任务展示中心' } },
 
     // 登录
-    { path: '/login', component: () => import('@/views/login/loginIndex.vue'), meta: { title: '登录-欢迎访问卡比之家' } },
+    { path: '/login', component: () => import('@/views/login/loginIndex.vue'), meta: { title: '登录-欢迎访问捏捏的魔仙堡' } },
     // 注册
-    { path: '/userAdd', component: () => import('@/views/Add/UserAddIndex.vue'), meta: { title: '注册-欢迎注册卡比之家' } },
+    { path: '/userAdd', component: () => import('@/views/Add/UserAddIndex.vue'), meta: { title: '注册-欢迎注册捏捏的魔仙堡' } },
 
     { path: '/test/:id', component: () => import('@/views/Test/TestIndex.vue'), meta: { title: '欢迎-来到测试中心' } },
 
@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
     if (to.meta.title) {
         document.title = `${to.meta.title}`; // 使用字符串模板将其转换为字符串
     } else {
-        document.title = '🦄欢迎来到卡比之家';
+        document.title = '🦄欢迎来到捏捏的魔仙堡';
     }
     next();
 });
